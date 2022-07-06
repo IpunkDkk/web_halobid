@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Mitra;
+use App\Models\Posyandu;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class MitraSeeder extends Seeder
+class PosyanduSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +15,11 @@ class MitraSeeder extends Seeder
      */
     public function run()
     {
-        Mitra::created([
-            'nama_mitra' => 'RS. Pasean',
-            'alamat' => 'Pasean'
+        Posyandu::create([
+            'nama' => 'Pasean',
+            'no_telepon' => '123',
+            'alamat' => 'Pasean',
+            'bidan_id' => 1
         ]);
     }
 }

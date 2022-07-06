@@ -26,7 +26,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="POST" action="/bidan/update/{{ $data->id }}">
+                    <form method="POST" action="{{ route('bidan.update', $data->id) }}">
                         @method('PATCH')
                       @csrf
                       <div class="card-body">
@@ -67,7 +67,7 @@
                       <!-- /.card-body -->
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Update</button>
-                        <button type="button" class="btn btn-danger">Batal</button>
+                        <button type="button" onclick="window.history.back()" class="btn btn-danger">Batal</button>
                       </div>
                     </form>
                   </div>

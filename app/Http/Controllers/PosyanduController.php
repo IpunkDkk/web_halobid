@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\Bidan;
+use App\Models\Posyandu;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class PosyanduController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $data = Blog::all();
-        return view('blog.index', compact(['data']));
-        
+        $data = Posyandu::with('bidan')->get();
+        return view('posyandu.index', compact(['data']));
     }
 
     /**
@@ -26,7 +26,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        $bidan = Bidan::all();
+        return view('posyandu.create', compact('bidan'));
     }
 
     /**
@@ -37,69 +38,70 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $simpan = Blog::create($request->all());
+        $simpan = Posyandu::create($request->all());
 
         if ($simpan) {
-            $data = Blog::all();
-            // return view('bidan.index', compact('data'));
-            return redirect()->route('blog.index', compact('data'));
+            $data = Posyandu::all();
+            // return view('posyandu.index', compact('data'));
+            return redirect()->route('posyandu.index', compact('data'));
         }
         else {
-            return view('blog.create');
+            return view('posyandu.create');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $data = Blog::find($id);
-        return view('blog.show', compact('data'));
-        
+        $data = Posyandu::with('bidan')->first();
+        // dd($data);
+        return view('posyandu.show', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = Blog::where('id', $id)->first();
-        return view('blog.edit',compact(['data']));
+        $data = Posyandu::where('id', $id)->first();
+        $bidan = Bidan::all();
+        return view('posyandu.edit',compact(['data', 'bidan']));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Blog  $blog
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data = Blog::where('id',$id)->first();
+        $data = Posyandu::where('id',$id)->first();
         $data->update($request->all());
-        return redirect()->route('blog.show', $data);
+        return redirect()->route('posyandu.show', $data);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $del = Blog::where('id', $id)->delete();
+        $del = Posyandu::where('id', $id)->delete();
         if ($del) {
-            $data = Blog::all();
-            return redirect()->route('blog.index', compact('data'));
+            $data = Posyandu::all();
+            return redirect()->route('posyandu.index', compact('data'));
         }
     }
 }

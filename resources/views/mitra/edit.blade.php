@@ -42,7 +42,7 @@
                       <!-- /.card-body -->
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Update</button>
-                        <button type="button" class="btn btn-danger">Batal</button>
+                        <button type="button" onclick="window.history.back()" class="btn btn-danger">Batal</button>
                       </div>
                     </form>
                   </div>

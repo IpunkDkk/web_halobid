@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Layanan;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,8 @@ class LayananSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Layanan::create( [
+            'layanan' => 'USG'
+           ]) ;
     }
 }

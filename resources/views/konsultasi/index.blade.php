@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Bidan</h1>
+                    <h1>Konsultasi</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -20,9 +20,9 @@
             <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tambah Bidan</h3>
+                    <h3 class="card-title">Tambah Layanan</h3>
                     <div class="card-tools">
-                        <a href="{{ route('bidan.create') }}" class="btn btn-defaul">
+                        <a href="{{ route('konsultasi.create') }}" class="btn btn-defaul">
                             <i class="fas fa-plus"></i>
                         </a>
                     </div>
@@ -33,11 +33,11 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">No</th>
-                            <th>Nama Bidan</th>
-                            <th>Alamat</th>
-                            <th>No. STR</th>
-                            <th>No. HP</th>
-                            <th>Pendidikan</th>
+                            <th>Pasien</th>
+                            <th>Bidan</th>
+                            <th>Layanan</th>
+                            <th>Keluhan</th>
+                            <th>Saran</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -45,26 +45,26 @@
                         @foreach ($data as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->nama_bidan }}</td>
-                                <td>{{ $item->alamat }}</td>
-                                <td>{{ $item->no_str }}</td>
-                                <td>{{ $item->no_hp }}</td>
-                                <td>{{ $item->pendidikan }}</td>
+                                <td>{{ $item->pasien->nama_pasien }}</td>
+                                <td>{{ $item->bidan->nama_bidan }}</td>
+                                <td>{{ $item->layanan }}</td>
+                                <td>{{ $item->keluhan }}</td>
+                                <td>{{ $item->saran }}</td> 
                                 <td class="project-actions text-center">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('bidan.show', $item->id) }}}">
+                                    <a class="btn btn-primary btn-sm" href="{{ route('konsultasi.show', $item->id) }}">
                                         <i class="fas fa-folder"></i>
                                         View
                                         </a>
-                                    <a class="btn btn-warning btn-sm" href="{{ route('bidan.edit', $item->id) }}">
+                                    <a class="btn btn-warning btn-sm" href="{{ route('konsultasi.edit', $item->id) }}">
                                         <i class="fas fa-pencil-alt"></i>
                                         Edit
                                     </a>
-                                    <form method="post" action="{{ route('bidan.destroy', $item->id) }}">
+                                    <form method="post" action="{{ route('konsultasi.destroy', $item->id) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" href="#" >
-                                            <i class="fas fa-trash"></i>
-                                            Delete
+                                        <button class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash"></i>
+                                         Delete
                                         </button>
                                     </form>
                                 </td> 
@@ -85,8 +85,5 @@
                 </div>
                 </div>
                 <!-- /.card -->
-
         </section>
-            
-
   @endsection

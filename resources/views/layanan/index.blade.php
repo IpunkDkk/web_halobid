@@ -22,7 +22,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Tambah Layanan</h3>
                     <div class="card-tools">
-                        <a href="/layanan/create" class="btn btn-defaul">
+                        <a href="{{ route('layanan.create') }}" class="btn btn-defaul">
                             <i class="fas fa-plus"></i>
                         </a>
                     </div>

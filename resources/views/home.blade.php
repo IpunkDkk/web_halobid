@@ -24,13 +24,13 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>5</h3>
+            <h3>{{ $bidan }}</h3>
             <p>Bidan</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('bidan.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -38,13 +38,13 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>10</h3>
+            <h3>{{ $pasien }}</h3>
             <p>Pasien</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-stalker"></i>
           </div>
-          <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('pasien.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -52,13 +52,13 @@
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>9</h3>
+            <h3>{{ $layanan }}</h3>
             <p>Layanan</p>
           </div>
           <div class="icon">
             <i class="ion ion-medkit"></i>
           </div>
-          <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('layanan.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -66,20 +66,20 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>3</h3>
+            <h3>{{ $mitra }}</h3>
             <p>Mitra</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('mitra.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
     </div>
     <!-- /.row -->
     <!-- Main row -->
-    <div class="row">
+    {{-- <div class="row">
       <!-- Left col -->
       <section class="col-lg-7 connectedSortable">
         <!-- Custom tabs (Charts with tabs)-->
@@ -165,7 +165,7 @@
         </div>
       </section>
       <!-- right col -->
-    </div>
+    </div> --}}
     <!-- /.row (main row) -->
   </div><!-- /.container-fluid -->
 </section>

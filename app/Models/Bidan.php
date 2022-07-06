@@ -10,4 +10,9 @@ class Bidan extends Model
     use HasFactory;
 
     protected $fillable = [ 'nama_bidan', 'alamat', 'no_str', 'no_hp', 'pendidikan', 'foto' ];
+
+    public function posyandu()
+    {
+        return $this->hasOne(Posyandu::class);
+    }
 }

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Mitra;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class MitraSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +15,11 @@ class MitraSeeder extends Seeder
      */
     public function run()
     {
-        Mitra::created([
-            'nama_mitra' => 'RS. Pasean',
-            'alamat' => 'Pasean'
+        User::create([
+            'name' => 'Taufiq',
+            'username' => 'taufiq',
+            'email' => 'taufiqurrahman@uim.ac.id',
+            'password' => 'admin'
         ]);
     }
 }

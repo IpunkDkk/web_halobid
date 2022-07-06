@@ -7,7 +7,7 @@
             <div class="container-fluid">
               <div class="row mb-2">
                 <div class="col-sm-6">
-                  <h1>Profil Pasien</h1>
+                  <h1>Posyandu</h1>
                 </div>
               </div>
             </div><!-- /.container-fluid -->
@@ -22,7 +22,7 @@
                   <!-- general form elements -->
                   <div class="card card-primary">
                     <div class="card-header">
-                      <h3 class="card-title">Profil Pasien</h3>
+                      <h3 class="card-title">Tabel Posyandu</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
