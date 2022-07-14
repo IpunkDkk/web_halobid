@@ -86,35 +86,36 @@
                     <h4 class="font-semibold text-lg text-primary mb-2">Layanan</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:5xl">HaloBid</h2>
                 </div>
+           
+                {{-- <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+                    <div class="mb-12 p-4 md:w-1/3">
+                        <div class="rounded-md shadow-md overflow-hidden">
+                            <img src="dist/image/portfolio/1.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
+                        </div>
+                        <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">Media MTs. Bustanul Ulum</h3>
+                        <p class="font-md text-base text-secondary">Sosial media konten lembaga tingkat SLTP di daerah Waru Pamekasan</p>
+                    </div>
+                    <div class="mb-12 p-4 md:w-1/3">
+                        <div class="rounded-md shadow-md overflow-hidden">
+                            <img src="dist/image/portfolio/2.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
+                        </div>
+                        <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">Yayasan Bustanul Ulum</h3>
+                        <p class="font-md text-base text-secondary">Sosial media konten Pondok Pesantren di daerah Waru Pamekasan!</p>
+                    </div>
+                    <div class="mb-12 p-4 md:w-1/3">
+                        <div class="rounded-md shadow-md overflow-hidden">
+                            <img src="dist/image/portfolio/3.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
+                        </div>
+                        <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">BEM-FT UI Madura</h3>
+                        <p class="font-md text-base text-secondary">Media informasi kreatif (MEDIKRAF) BEM Fakultas Teknik UIM Pamekasan</p>
+                    </div>
+                </div> --}}
+
+                <div class="image" style="width: 7%">
+                    <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">Imunisasi</a>
+                    <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">Periksa Kehamilan</a>
+                </div>
             </div> 
-            {{-- <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-                <div class="mb-12 p-4 md:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/image/portfolio/1.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">Media MTs. Bustanul Ulum</h3>
-                    <p class="font-md text-base text-secondary">Sosial media konten lembaga tingkat SLTP di daerah Waru Pamekasan</p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/image/portfolio/2.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">Yayasan Bustanul Ulum</h3>
-                    <p class="font-md text-base text-secondary">Sosial media konten Pondok Pesantren di daerah Waru Pamekasan!</p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="dist/image/portfolio/3.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">BEM-FT UI Madura</h3>
-                    <p class="font-md text-base text-secondary">Media informasi kreatif (MEDIKRAF) BEM Fakultas Teknik UIM Pamekasan</p>
-                </div>
-            </div> --}}
-
-            <div class="image" >
-               <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" class="img-circle elevation-2" alt="" ></a>
-            </div>
-
         </div>
     </section>
     <!-- Layanan Section End -->
