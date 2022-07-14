@@ -22,7 +22,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Tambah Mitra</h3>
                     <div class="card-tools">
-                        <a href="/mitra/create" class="btn btn-defaul">
+                        <a href="{{ route('mitra.create') }}" class="btn btn-defaul">
                             <i class="fas fa-plus"></i>
                         </a>
                     </div>

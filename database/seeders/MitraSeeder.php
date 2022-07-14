@@ -15,7 +15,7 @@ class MitraSeeder extends Seeder
      */
     public function run()
     {
-        Mitra::created([
+        Mitra::create([
             'nama_mitra' => 'RS. Pasean',
             'alamat' => 'Pasean'
         ]);

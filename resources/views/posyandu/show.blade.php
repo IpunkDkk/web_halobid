@@ -29,19 +29,19 @@
                     <div class="card-body">
                     <div class="form-group">
                         <label for="nama">Nama Posyandu</label>
-                        <input type="text" value="{{ $data->nama }}" class="form-control" id="nama" placeholder="Masukkan nama Posyandu">
+                        <input type="text" value="{{ $data->nama }}" class="form-control" id="nama" placeholder="Masukkan Posyandu" disabled>
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input type="text" name="alamat" value="{{ $data->alamat }}" class="form-control" id="alamat" placeholder="Alamat">
+                        <input type="text" name="alamat" value="{{ $data->alamat }}" class="form-control" id="alamat" placeholder="Alamat" disabled>
                     </div>
                     <div class="form-group">
                         <label for="no_telepon">No. Telepon</label>
-                        <input type="no_telepon" name="no_telepon" value="{{ $data->no_telepon }}" class="form-control" id="no_telepon" placeholder="No. Telepon">
+                        <input type="number" name="no_telepon" value="{{ $data->no_telepon }}" class="form-control" id="no_telepon" placeholder="No. Telepon" disabled>
                     </div>
                     <div class="form-group">
                         <label for="bidan_id">Bidan</label>
-                        <input type="text" name="no_telepon" value="{{ $data->bidan->nama_bidan }}" class="form-control" id="no_telepon" placeholder="No. Telepon">
+                        <input type="text" name="no_telepon" value="{{ $data->bidan->nama_bidan }}" class="form-control" id="no_telepon" placeholder="Bidan" disabled>
 
                       </div>
                     </div>

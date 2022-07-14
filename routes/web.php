@@ -28,13 +28,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'index']);
 
-Route::get('/login', [UserController::class, 'index']);
+Route::get('/login', [UserController::class, 'index'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index'])->name('admin');
     
     // Route::get('/bidan', [BidanController::class, 'index'])->name('bidan.index');
     // Route::get('/bidan/create', [BidanController::class, 'create'])->name('bidan.create');

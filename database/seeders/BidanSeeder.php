@@ -16,10 +16,10 @@ class BidanSeeder extends Seeder
     public function run()
     {
        Bidan::create( [
-        'nama_bidan' => 'Livia',
-        'alamat' => 'Pasean',
+        'nama_bidan' => 'Nasidatul Qamariyah, Amd.Keb',
+        'alamat' => 'Sana tengah',
         'no_str' => '01234',
-        'no_hp' => '087886952551',
+        'no_hp' => '081703991999',
         'pendidikan' => 'S1 - Kebidanan',
         'foto' => '1.jpg'
        ]) ;

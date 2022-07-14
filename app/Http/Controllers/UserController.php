@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -16,6 +19,22 @@ class UserController extends Controller
         return view('login.login', [
             'title' => 'Login'
         ]);
+    }
+
+    public function login(Request $request){
+        $email = User::where('email', $request->email)->first();
+        // dd($email);
+        if ($email){
+            if (Hash::check($request->password, $email->password)){
+                if(Auth::attempt(['email' => $request->email, 'password' => $request->password], remember:1)){
+                    $request->session()->regenerate();
+                    return redirect()->route('admin');
+                }
+                // dd("login sukses");
+                // retirn 
+            }
+            return redirect()->route('login');
+        }
     }
 
     /**

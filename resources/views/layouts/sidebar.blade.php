@@ -13,7 +13,7 @@
           <img src="{{ asset('dist/img/admin.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/admin" class="d-block">Taufiq</a>
+          <a href="/admin" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
       <!-- Sidebar Menu -->
@@ -76,7 +76,7 @@
             </a>
           </li>
           <li class="nav-item {{ 'logout' == request()->path() ? 'menu-open' : '' }}">
-            <a href="/logout" class="nav-link {{ 'admin.logout' == request()->path() ? 'active' : '' }}">
+          <a href="/login" class="nav-link {{ 'user.login' == request()->path() ? 'active' : '' }}">
               <i class="nav-icon fas fa-power-off"></i>
               <p>Logout</p>
             </a>

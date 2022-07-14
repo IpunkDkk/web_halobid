@@ -54,7 +54,7 @@
                                     <a class="btn btn-primary btn-sm" href="{{ route('bidan.show', $item->id) }}}">
                                         <i class="fas fa-folder"></i>
                                         View
-                                        </a>
+                                    </a>
                                     <a class="btn btn-warning btn-sm" href="{{ route('bidan.edit', $item->id) }}">
                                         <i class="fas fa-pencil-alt"></i>
                                         Edit

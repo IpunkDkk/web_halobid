@@ -19,10 +19,8 @@
   <div class="login-logo">
     <a href="#"><b>HaloBid | Login</b></a>
   </div>
-  <!-- /.login-logo -->
-  @yield('content')
+    @yield('content')
 </div>
-<!-- /.login-box -->
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>

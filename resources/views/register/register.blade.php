@@ -14,7 +14,7 @@
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
               </div>
-            </div>
+            </div>      
           </div>
           <div class="input-group mb-3">
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" required value="{{ old('username') }}">
@@ -44,12 +44,10 @@
             <div>
               <button type="submit" class="w-100 btn btn-primary btn-block">Register</button>
             </div>
-            <!-- /.col -->
           </div>
         </form>
         <small class="d-block text-center mt-3">Sudah punya akun? <a href="/login">Login!</a></small>
       </div>
-      <!-- /.form-box -->
     </div>
   </div>
 @endsection

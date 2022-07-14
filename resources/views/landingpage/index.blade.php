@@ -30,7 +30,7 @@
                                 <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Layanan</a>
+                                <a href="#layanan" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Layanan</a>
                             </li>
                             <li class="group">
                                 <a href="#mitra" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Mitra</a>
@@ -39,7 +39,7 @@
                                 <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
                             </li>
                             <li class="group">
-                                <a href="#kontak" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Kontak</a>
+                                <a href="#konsultasi" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Konsultasi</a>
                             </li>
                             <li class="group">
                                 <a href="/login" class="text-base font-bold text-dark py-2 mx-8 flex group-hover:text-primary">Login</a>
@@ -60,9 +60,8 @@
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h1 class="text-base font-semibold text-primary md:text-xl">Hidup sehat bersama <span class="block font-boldt text-dark text-4xl mt-1 lg:text-5xl">HaloBid</span></h1>
                     <!-- <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Desainer & <span class="text-dark"> Content Creator</span></h2> -->
-                    <p class="font-medium text-secondary mb-10 leading-relaxed">Chat bidan, kunjungi rumah sakit, beli obat, cek lab dan update informasi seputar kesehatan ibu dan anak, semua bisa di <span class="text-dark font-bold">halobid!</span></p>
-
-                    <a href="https://api.whatsapp.com/send?phone=6287886952551" target="_blank" class="text-basse font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Chat dengan Dokter</a>
+                    <p class="font-medium text-secondary mb-10 leading-relaxed">Chat bidan, kunjungi polindes, beli obat, cek lab dan update informasi seputar kesehatan ibu dan anak, semua bisa di <span class="text-dark font-bold">halobid!</span></p>
+                    <a href="https://api.whatsapp.com/send?phone=6287886952551" target="_blank" class="text-basse font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Chat dengan Bidan</a>
                 </div> 
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
@@ -70,7 +69,7 @@
                         <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
                             <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#3b82f6" d="M45.7,-47.4C55.9,-35.6,58.4,-17.8,57.8,-0.6C57.2,16.5,53.4,33.1,43.2,43.2C33.1,53.4,16.5,57.1,-0.4,57.5C-17.3,57.9,-34.5,54.8,-44.3,44.7C-54,34.5,-56.2,17.3,-53.7,2.6C-51.1,-12.1,-43.7,-24.3,-34,-36.1C-24.3,-47.9,-12.1,-59.5,2.8,-62.3C17.8,-65.2,35.6,-59.3,45.7,-47.4Z" transform="translate(100 100) scale (1.2)" />
-                              </svg>
+                            </svg>
                         </span>
                     </div>
                 </div>
@@ -79,17 +78,16 @@
     </section>
     <!-- Hero Sectio End -->
 
-    <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+    <!-- Layanan Section Start -->
+    <section id="layanan" class="pt-36 pb-16 bg-slate-100">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Layanan</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:5xl">HaloBid</h2>
-                    <!-- <p class="font-medium text-md text-secondary md:text-lg">Hasilkan projek sesuai dengan kebutuhan industri atau instansi.</p> -->
                 </div>
             </div> 
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+            {{-- <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
                 <div class="mb-12 p-4 md:w-1/3">
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="dist/image/portfolio/1.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
@@ -111,12 +109,17 @@
                     <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">BEM-FT UI Madura</h3>
                     <p class="font-md text-base text-secondary">Media informasi kreatif (MEDIKRAF) BEM Fakultas Teknik UIM Pamekasan</p>
                 </div>
+            </div> --}}
+
+            <div class="image" >
+               <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" class="img-circle elevation-2" alt="" ></a>
             </div>
+
         </div>
     </section>
-    <!-- Portfolio Section End -->
+    <!-- Layanan Section End -->
 
-    <!-- Client Section Start -->
+    <!-- Mitra Section Start -->
     <section id="mitra" class="pt-36 pb-32 bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
@@ -145,7 +148,7 @@
             
         </div>
     </section>
-    <!-- Client Section End -->
+    <!-- Mitra Section End -->
 
     <!-- Blog Section Start -->
     <section id="blog" class="pt-36 pb-32 bg-slate-100">
@@ -201,13 +204,13 @@
     </section>
     <!-- Blog Section End -->
 
-    <!-- Contact Section Start -->
-    <section id="kontak" class="pt-36 pb-32">
+    <!-- Konsultasi Section Start -->
+    <section id="konsultasi" class="pt-36 pb-32">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-full mx-auto text-center mb-16">
-                    <h4 class="font-semibold text-lg text-primary mb-2">Kontak</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Kami</h2>
+                    <h4 class="font-semibold text-lg text-primary mb-2">Konsultasi</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Bidan</h2>
                     <!-- <p class="font-medium text-md text-secondary md:text-lg">Butuh jasa desainer, hubungi kami</p> -->
                 </div>
             </div>
@@ -217,6 +220,10 @@
                     <div class="w-full px-4 mb-8">
                         <label for="name" class="text-base font-bold">Nama</label>
                         <input type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:outline-primary focus:ring-1 focus:border-primary">
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <label for="no_telepon" class="text-base font-bold">No. Telepon</label>
+                        <input type="number" id="no_telepon" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:outline-primary focus:ring-1 focus:border-primary">
                     </div> 
                     <div class="w-full px-4 mb-8">
                         <label for="email" class="text-base font-bold">Email</label>
@@ -234,7 +241,7 @@
             </form>
         </div>
     </section>  
-    <!-- Contact Section End -->
+    <!-- Konsultasi Section End -->
 
     <!-- Footer Start -->
     <footer class="bg-dark pt-24 pb-12">
@@ -244,7 +251,7 @@
                     <h2 class="font-bold text-4xl text-white mb-5">HaloBid</h2>
                     <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
                     <p>halobid@uim.ac.id</p>
-                    <p>Jl. Dirgahayu Gg. V No. 0 Bugih</p>
+                    <p>Jl. Raya Lang-dulang, Sana tengah Pasean</p>
                     <p>Pamekasan</p>
                 </div>
                 <div class="w-full px-4 mb-12 md:w-1/3">
@@ -277,10 +284,10 @@
                             <a href="#blog" class="inline-block text-base hover:text-primary mb-3">Blog</a>
                         </li>
                         <li>
-                            <a href="#kontak" class="inline-block text-base hover:text-primary mb-3">Kontak</a>
+                            <a href="#konsultasi" class="inline-block text-base hover:text-primary mb-3">Konsultasi</a>
                         </li>
                         <li>
-                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Login</a>
+                            <a href="login" class="inline-block text-base hover:text-primary mb-3">Login</a>
                         </li>
                     </ul>
                 </div>

@@ -20,7 +20,7 @@
             <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tambah Postingan</h3>
+                    <h3 class="card-title">Tambah Berita</h3>
                     <div class="card-tools">
                         <a href="{{ route('blog.create') }}" class="btn btn-defaul">
                             <i class="fas fa-plus"></i>
@@ -33,6 +33,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">No</th>
+                            <th>Foto</th>
                             <th>Judul</th>
                             <th>Postingan</th>
                         </tr>
