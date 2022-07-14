@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Mitra</h1>
+                    <h1>Data Mitra</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -15,15 +15,17 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid">
-            <div class="row">
-            <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tambah Mitra</h3>
+                    <h3 class="card-title mt-2" >Daftar Mitra</h3>
                     <div class="card-tools">
-                        <a href="{{ route('mitra.create') }}" class="btn btn-defaul">
-                            <i class="fas fa-plus"></i>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <a href="{{route('mitra.create')}}">
+                            <button type="button" class="btn btn-default" title="Add">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -31,11 +33,11 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                     <thead>
-                        <tr>
-                        <th style="width: 10px">No</th>
-                        <th>Nama Mitra</th>
-                        <th>Alamat</th>
-                        <th>Aksi</th>
+                        <tr class="text-center">
+                            <th style="width: 1%">#</th>
+                            <th>Nama Mitra</th>
+                            <th>Alamat</th>
+                            <th style="width: 20%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,22 +47,24 @@
                                 <td>{{ $item->nama_mitra }}</td>
                                 <td>{{ $item->alamat }}</td>
                                 <td class="project-actions text-center">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('mitra.show', $item->id) }}">
-                                        <i class="fas fa-folder"></i>
-                                        View
-                                    </a>
-                                    <a class="btn btn-warning btn-sm" href="{{ route('mitra.edit', $item->id) }}">
-                                        <i class="fas fa-pencil-alt"></i>
-                                        Edit
-                                    </a>
-                                    <form method="post" action="{{ route('mitra.destroy', $item->id) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash"></i>
-                                            Delete
-                                        </button>
-                                    </form>
+                                    <div class="row justify-content-center align-item-center">
+                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('mitra.show', $item->id) }}">
+                                            <i class="fas fa-folder"></i>
+                                            View
+                                        </a>
+                                        <a class="btn btn-warning btn-sm m-1" href="{{ route('mitra.edit', $item->id) }}">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            Edit
+                                        </a>
+                                        <form method="post" action="{{ route('mitra.destroy', $item->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm m-1" href="#">
+                                                <i class="fas fa-trash"></i>
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td> 
                             </tr>                            
                         @endforeach

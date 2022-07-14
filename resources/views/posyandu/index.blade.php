@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Posyandu</h1>
+                    <h1>Data Posyandu</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -15,15 +15,17 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid">
-            <div class="row">
-            <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tambah Posyandu</h3>
+                    <h3 class="card-title mt-2">Daftar Posyandu</h3>
                     <div class="card-tools">
-                        <a href="{{ route('posyandu.create') }}" class="btn btn-defaul">
-                            <i class="fas fa-plus"></i>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <a href="{{route('posyandu.create')}}">
+                            <button type="button" class="btn btn-default" title="Add">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -31,13 +33,13 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                     <thead>
-                        <tr>
-                            <th style="width: 10px">No</th>
+                        <tr class="text-center">
+                            <th style="width: 10px">#</th>
                             <th>Nama</th>
                             <th>No. Telepon</th>
                             <th>Alamat</th>
                             <th>Bidan</th>
-                            <th>Aksi</th>
+                            <th style="width: 20%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,22 +51,24 @@
                                 <td>{{ $item->alamat }}</td>
                                 <td>{{ $item->bidan->nama_bidan }}</td>
                                 <td class="project-actions text-center">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('posyandu.show', $item->id) }}">
-                                        <i class="fas fa-folder"></i>
-                                        View
+                                    <div class="row justify-content-center align-item-center">
+                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('posyandu.show', $item->id) }}">
+                                            <i class="fas fa-folder"></i>
+                                            View
+                                            </a>
+                                        <a class="btn btn-warning btn-sm m-1" href="{{ route('posyandu.edit', $item->id) }}">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            Edit
                                         </a>
-                                    <a class="btn btn-warning btn-sm" href="{{ route('posyandu.edit', $item->id) }}">
-                                        <i class="fas fa-pencil-alt"></i>
-                                        Edit
-                                    </a>
-                                    <form method="post" action="{{ route('posyandu.destroy', $item->id) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash"></i>
-                                         Delete
-                                        </button>
-                                    </form>
+                                        <form method="post" action="{{ route('posyandu.destroy', $item->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm m-1" href="#">
+                                            <i class="fas fa-trash"></i>
+                                            Delete
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td> 
                             </tr>                            
                         @endforeach

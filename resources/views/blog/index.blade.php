@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Berita</h1>
+                    <h1>Data Berita</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -15,15 +15,17 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid">
-            <div class="row">
-            <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tambah Berita</h3>
+                    <h3 class="card-title mt-2">Daftar Berita</h3>
                     <div class="card-tools">
-                        <a href="{{ route('blog.create') }}" class="btn btn-defaul">
-                            <i class="fas fa-plus"></i>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <a href="{{route('blog.create')}}">
+                            <button type="button" class="btn btn-default" title="Add">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </a>
                     </div>
                 </div>
