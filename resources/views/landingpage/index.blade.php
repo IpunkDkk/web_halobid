@@ -114,6 +114,7 @@
                 <div class="image" style="width: 7%">
                     <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">Imunisasi</a>
                     <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">Periksa Kehamilan</a>
+                    <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">USG</a>
                 </div>
             </div> 
         </div>
