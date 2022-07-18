@@ -1,14 +1,19 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BayiController;
 use App\Http\Controllers\BidanController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImunisasiController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\MedisController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\PosyanduController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -28,37 +33,41 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'index']);
 
-Route::get('/login', [UserController::class, 'index'])->name('login');
+Route::get('/login', [UserController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', [HomeController::class, 'index'])->name('admin');
-    
-    // Route::get('/bidan', [BidanController::class, 'index'])->name('bidan.index');
-    // Route::get('/bidan/create', [BidanController::class, 'create'])->name('bidan.create');
-    // Route::post('/bidan/store', [BidanController::class, 'store'])->name('bidan.store');
-    // Route::get('/bidan/{id}', [BidanController::class, 'show'])->name('bidan.show');
-    // Route::get('/bidan/edit/{id}', [BidanController::class, 'edit']);
-    // Route::patch('/bidan/update/{id}', [BidanController::class, 'update']);
-    // Route::delete('/bidan/delete/{id}', [BidanController::class, 'destroy']);
+    Route::get('/', [HomeController::class, 'index'])->name('admin')->middleware('auth');
 
-    Route::resource('bidan', BidanController::class);
+    Route::resource('bidan', BidanController::class)->middleware('auth');
     
-    Route::resource('pasien', PasienController::class);
+    Route::resource('pasien', PasienController::class)->middleware('auth');
 
-    Route::resource('posyandu', PosyanduController::class);
-    
-    Route::resource('layanan', LayananController::class);
+    Route::resource('petugas', PetugasController::class)->middleware('auth');
 
-    Route::resource('konsultasi', KonsultasiController::class);
-    
-    Route::get('/user', [AdminController::class, 'index']);
-    
-    Route::resource('mitra', MitraController::class);
+    Route::resource('bayi', BayiController::class)->middleware('auth');
 
-    Route::resource('blog', BlogController::class);
+    Route::resource('imunisasi', ImunisasiController::class)->middleware('auth');
+
+    Route::resource('obat', ObatController::class)->middleware('auth');
+
+    Route::resource('medis', MedisController::class)->middleware('auth');
+
+    Route::resource('posyandu', PosyanduController::class)->middleware('auth');
+    
+    Route::resource('layanan', LayananController::class)->middleware('auth');
+
+    Route::resource('konsultasi', KonsultasiController::class)->middleware('auth');
+    
+    Route::resource('user', AdminController::class)->middleware('auth');
+    
+    Route::resource('mitra', MitraController::class)->middleware('auth');
+
+    Route::resource('blog', BlogController::class)->middleware('auth');
 });
 

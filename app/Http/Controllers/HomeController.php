@@ -16,10 +16,14 @@ class HomeController extends Controller
     {
         $bidan = DB::table('bidans')->count();
         $pasien = DB::table('pasiens')->count();
+        $petugas = DB::table('petugas')->count();
+        $bayi = DB::table('bayis')->count();
+        $imunisasi = DB::table('imunisasis')->count();
+        $obat = DB::table('obats')->count();
         $layanan = DB::table('layanans')->count();
         $mitra = DB::table('mitras')->count();
         // dd($bidan);
-        return view('home', compact(['bidan', 'pasien', 'layanan', 'mitra']));
+        return view('home', compact(['bidan', 'pasien', 'petugas', 'bayi', 'imunisasi', 'obat', 'layanan', 'mitra']));
     }
 
     /**

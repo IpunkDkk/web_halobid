@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -14,7 +18,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        // return view('admin.index');    
+        $data = DB::table('users')->join('roles', 'roles.user_id','=', 'users.id')
+        ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+        return view('user.index', compact(['data']));
     }
 
     /**
@@ -24,7 +30,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -35,7 +41,31 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'email' => 'unique:users',
+        ]);
+        $password = Hash::make($request->password);
+        $simpan = User::create([
+            'name' => $request->name,
+            'username'=> $request->username,
+            'email' => $request->email,
+            'password' => $password
+        ]);
+
+        if ($simpan) {
+            $id = $simpan->id;
+            $role = Role::create([
+                'user_id'=>$id,
+                'role' => $request->role
+            ]);
+            $data = DB::table('users')->join('roles', 'roles.user_id','=', 'users.id')
+            ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+            return view('user.index', compact(['data']));
+            return redirect()->route('user.index', compact('data'));
+        }
+        else {
+            return view('user.create');
+        }
     }
 
     /**
@@ -44,7 +74,7 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show($id)
     {
         //
     }

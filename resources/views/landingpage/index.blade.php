@@ -86,35 +86,33 @@
                     <h4 class="font-semibold text-lg text-primary mb-2">Layanan</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:5xl">HaloBid</h2>
                 </div>
-           
-                {{-- <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-                    <div class="mb-12 p-4 md:w-1/3">
-                        <div class="rounded-md shadow-md overflow-hidden">
-                            <img src="dist/image/portfolio/1.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
-                        </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">Media MTs. Bustanul Ulum</h3>
-                        <p class="font-md text-base text-secondary">Sosial media konten lembaga tingkat SLTP di daerah Waru Pamekasan</p>
+                <div class="w-full px-4">
+                    <div class="flex flex-wrap items-center justify-center">
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/imunisasi.png" alt="Imunisasi">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/penimbangan bayi.png" alt="Penimbangan bayi">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/periksa kehamilan.png" alt="Periksa Kehamilan">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/bantuan persalinan.png" alt="Bantuan Persalinan">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/kb.png" alt="Keluarga Berencana">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/baby spa.png" alt="Baby Spa">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/potong rambut.png" alt="Potong Rambut Bayi">
+                        </a>
+                        <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/homecare.png" alt="Homecare">
+                        </a>
                     </div>
-                    <div class="mb-12 p-4 md:w-1/3">
-                        <div class="rounded-md shadow-md overflow-hidden">
-                            <img src="dist/image/portfolio/2.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
-                        </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">Yayasan Bustanul Ulum</h3>
-                        <p class="font-md text-base text-secondary">Sosial media konten Pondok Pesantren di daerah Waru Pamekasan!</p>
-                    </div>
-                    <div class="mb-12 p-4 md:w-1/3">
-                        <div class="rounded-md shadow-md overflow-hidden">
-                            <img src="dist/image/portfolio/3.jpg" alt="MTs. Bustanul Ulum Waru" width="w-full">
-                        </div>
-                        <h3 class="font-semibold text-xl text-dark mt-5 mb-3 ">BEM-FT UI Madura</h3>
-                        <p class="font-md text-base text-secondary">Media informasi kreatif (MEDIKRAF) BEM Fakultas Teknik UIM Pamekasan</p>
-                    </div>
-                </div> --}}
-
-                <div class="image" style="width: 7%">
-                    <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">Imunisasi</a>
-                    <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">Periksa Kehamilan</a>
-                    <a href="#"><img src="{{ asset('dist/img/undraw_profile.svg') }}" alt="">USG</a>
                 </div>
             </div> 
         </div>
@@ -133,17 +131,14 @@
             </div>
             <div class="w-full px-4">
                 <div class="flex flex-wrap items-center justify-center">
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
-                        <img src="dist/image/clients/google.svg" alt="Google">
+                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-40 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/image/clients/pasean.png" alt="">
                     </a>
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
-                        <img src="dist/image/clients/traveloka.svg" alt="Traveloka">
+                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-40 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/image/clients/waru.png" alt="">
                     </a>
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
-                        <img src="dist/image/clients/intel.svg" alt="Intel">
-                    </a>
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
-                        <img src="dist/image/clients/amazon.svg" alt="Amazon">
+                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-40 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/image/clients/fajar.png" alt="">
                     </a>
                 </div>
             </div>
@@ -166,24 +161,24 @@
             <div class="flex flex-wrap">
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                        <img src="https://source.unsplash.com/360x200?designer" alt="Desainer" class="w-full">
+                        <img src="https://source.unsplash.com/360x200?food" alt="Desainer" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Tips Belajar Desain</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Kandungan Gizi Buah Leci yang Baik untuk Kesehatan</a>
                             </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Banyak orang bermimpi ingin membuat desain kualitas top pakai software desain grafis.</p>
+                            <p class="font-medium text-base text-secondary mb-6">Rasanya manis dengan daging buah berwarna putih, buah leci ternyata kaya nutrisi yang sangat baik untuk kesehatan. Beberapa di antaranya yaitu serat, karbohidrat, dan protein.</p>
                             <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                        <img src="https://source.unsplash.com/360x200?technology" alt="Technology" class="w-full">
+                        <img src="https://source.unsplash.com/360x200?water" alt="Technology" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Tips Belajar UI UX Design</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Diet dan Nutrisi</a>
                             </h3>
-                            <p class="font-medium text-base text-secondary mb-6">UI/UX Designer adalah sebuah bidang pekerjaan yang banyak dibutuhkan di era teknologi seperti saat ini.</p>
+                            <p class="font-medium text-base text-secondary mb-6">Diet pada dasarnya adalah pola makan, yang cara dan jenis makanannya diatur. Tujuannya adalah untuk menjaga kesehatan tubuh secara keseluruhan.</p>
                             <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
                         </div>
                     </div>

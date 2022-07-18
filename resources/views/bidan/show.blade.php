@@ -54,14 +54,10 @@
                 <strong><i class="fas fa-solid fa-mobile mr-1"></i> No. Telepon</strong>
                 <p class="text-muted">{{ $data->no_hp }}</p>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
+
   @endsection

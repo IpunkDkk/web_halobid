@@ -28,7 +28,13 @@ class DatabaseSeeder extends Seeder
             LayananSeeder::class,
             BlogSeeder::class,
             PosyanduSeeder::class,
-            KonsultasiSeeder::class
+            KonsultasiSeeder::class,
+            BayiSeeder::class,
+            ImunisasiSeeder::class,
+            ObatSeeder::class,
+            MedisSeeder::class,
+            PetugasSeeder::class,
+            RoleSeeder::class
         ]);
     }
 }

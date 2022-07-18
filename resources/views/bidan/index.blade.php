@@ -92,6 +92,33 @@
                 <!-- /.card -->
 
         </section>
-            
-
-  @endsection
+        {{-- <script>
+            function redirect() {
+              window.location.href = '/admin/bidan';
+            }
+      
+            $(document).ready(function() {
+              $.ajaxSetup({
+                headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+              });
+            });
+      
+            function delete(url) {
+              console.log("test")
+              if(confirm('Are you sure?')) {
+                $.ajax({
+                  type: "POST",
+                  url: url,
+                  success: function(result) {
+                    location.reload();
+                  }
+                });
+              }
+            }
+          </script> --}}
+      @endsection
+      
+      {{-- @section('script')
+      @endsection --}}

@@ -1,5 +1,4 @@
 @extends('layouts.index')
-
 @section('title', 'Home')
 
 @section('content')
@@ -28,40 +27,52 @@
         </div>
       </div>
       <div class="col-lg-3 col-6">
+        <div class="small-box bg-secondary">
+          <div class="inner">
+            <h3>{{ $petugas }}</h3>
+            <p>Petugas</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="{{ route('petugas.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>{{ $pasien }}</h3>
-            <p>Pasien</p>
+            <h3>{{ $bayi }}</h3>
+            <p>Bayi</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-stalker"></i>
           </div>
-          <a href="{{ route('pasien.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('bayi.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
 
       <div class="col-lg-3 col-6">
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>{{ $layanan }}</h3>
-            <p>Layanan</p>
+            <h3>{{ $imunisasi }}</h3>
+            <p>Imunisasi</p>
           </div>
           <div class="icon">
             <i class="ion ion-medkit"></i>
           </div>
-          <a href="{{ route('layanan.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('imunisasi.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-6">
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>{{ $mitra }}</h3>
-            <p>Mitra</p>
+            <h3>{{ $obat }}</h3>
+            <p>Obat</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="{{ route('mitra.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('obat.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
     </div>
