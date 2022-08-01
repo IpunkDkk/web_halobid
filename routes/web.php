@@ -47,10 +47,10 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('admin')->middleware('auth');
 
     Route::resource('antrian', AntrianController::class)->middleware('auth');
@@ -62,7 +62,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('pantaukb', PantaukbController::class)->middleware('auth');
 
     Route::resource('bidan', BidanController::class)->middleware('auth');
-    
+
     Route::resource('pasien', PasienController::class)->middleware('auth');
 
     Route::resource('petugas', PetugasController::class)->middleware('auth');
@@ -78,20 +78,17 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('medis', MedisController::class)->middleware('auth');
 
     Route::resource('posyandu', PosyanduController::class)->middleware('auth');
-    
+
     Route::resource('layanan', LayananController::class)->middleware('auth');
 
     Route::resource('persalinan', PersalinanController::class)->middleware('auth');
 
     Route::resource('konsultasi', KonsultasiController::class)->middleware('auth');
     Route::resource('licechat', LivechatController::class)->middleware('auth');
-    
+
     Route::resource('user', AdminController::class)->middleware('auth');
-    
+
     Route::resource('mitra', MitraController::class)->middleware('auth');
 
     Route::resource('blog', BlogController::class)->middleware('auth');
-    
-    
 });
-
