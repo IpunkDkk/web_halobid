@@ -41,7 +41,7 @@
                             {{-- </div> --}}
                         </div>
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
                         </div>
                     </form>
                     </div>

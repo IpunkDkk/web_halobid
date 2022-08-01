@@ -18,8 +18,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = DB::table('users')->join('roles', 'roles.user_id','=', 'users.id')
-        ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+        $data = DB::table('users')->join('roles', 'roles.user_id', '=', 'users.id')
+            ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
         return view('user.index', compact(['data']));
     }
 
@@ -47,7 +47,7 @@ class AdminController extends Controller
         $password = Hash::make($request->password);
         $simpan = User::create([
             'name' => $request->name,
-            'username'=> $request->username,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => $password
         ]);
@@ -55,15 +55,14 @@ class AdminController extends Controller
         if ($simpan) {
             $id = $simpan->id;
             $role = Role::create([
-                'user_id'=>$id,
+                'user_id' => $id,
                 'role' => $request->role
             ]);
-            $data = DB::table('users')->join('roles', 'roles.user_id','=', 'users.id')
-            ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+            $data = DB::table('users')->join('roles', 'roles.user_id', '=', 'users.id')
+                ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
             return view('user.index', compact(['data']));
             return redirect()->route('user.index', compact('data'));
-        }
-        else {
+        } else {
             return view('user.create');
         }
     }
@@ -106,7 +105,7 @@ class AdminController extends Controller
         // $data->update($request->all());
         // return redirect()->route('user.show', $data);
 
-        
+
     }
 
     /**

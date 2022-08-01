@@ -46,7 +46,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->no_antrian }}</td>
                                 <td>{{ $item->ket_antrian }}</td>
-                                <td>{{ $item->status }}</td>
+                                <td>{{ $item->status . ' di cek' }}</td>
 
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">

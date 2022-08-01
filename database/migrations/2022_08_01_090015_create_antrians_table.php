@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('no_antrian');
             $table->string('ket_antrian');
-            $table->enum('status', ['Sudah', 'Belum']);
+            $table->enum('status', ['Sudah', 'Belum'])->default('Belum');
             $table->timestamps();
         });
     }
