@@ -18,16 +18,14 @@ return new class extends Migration
         Schema::create('konsultasis', function (Blueprint $table) 
         {
             $table->id();
-            $table->unsignedBigInteger('pasien_id');
+            // $table->string('judul_konsultasi');
+            // $table->string('isi_pesan');
             $table->unsignedBigInteger('bidan_id');
-            $table->unsignedBigInteger('layanan_id');
-            $table->string('keluhan');
-            $table->string('saran');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('pasien_id')->references('id')->on('pasiens')->onUpdate('cascade');
             $table->foreign('bidan_id')->references('id')->on('bidans')->onUpdate('cascade');
-            $table->foreign('layanan_id')->references('id')->on('layanans')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
         });
     }
 

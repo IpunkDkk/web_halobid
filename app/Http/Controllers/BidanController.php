@@ -65,7 +65,6 @@ class BidanController extends Controller
     public function show($id)
     {
         $data = Bidan::find($id);
-
         return view('bidan.show', compact('data'));
     }
 

@@ -34,7 +34,7 @@
                             <th style="width: 30%">Nama</th>
                             <th style="width: 30%">Email</th>
                             <th style="width: 5%">Level</th>
-                            <th style="width: 20%">Aksi</th>
+                            <th style="width: 12%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,20 +46,17 @@
                                 <td>{{ $item->role }}</td>
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
-                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('user.show', $item->id) }}}">
-                                            <i class="fas fa-folder"></i>
-                                            View
+                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('user.show', $item->id) }}">
+                                            <i class="fas fa-eye"></i>
                                         </a>
                                         <a class="btn btn-warning btn-sm m-1" href="{{ route('user.edit', $item->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
-                                            Edit
                                         </a>
                                         <form method="post" action="{{ route('user.destroy', $item->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm m-1" href="#" >
                                                 <i class="fas fa-trash"></i>
-                                                Delete
                                             </button>
                                         </form>
                                     </div>

@@ -50,7 +50,7 @@
                           <label for="no_hp">Pendidikan</label>
                           <input type="pendidikan" name="pendidikan" value="{{ $data->pendidikan }}" class="form-control" id="pendidikan" placeholder="Pendidikan">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                           <label for="foto">Foto</label>
                           <div class="input-group">
                             <div class="custom-file">
@@ -61,7 +61,7 @@
                               <span class="input-group-text">Upload</span>
                             </div>
                           </div>
-                        </div>
+                        </div> --}}
                       </div>
                       </div>
                       <!-- /.card-body -->

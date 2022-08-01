@@ -76,7 +76,9 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        // $data = Admin::with('user')->first();
+        // // dd($data);
+        // return view('user.show', compact('data'));
     }
 
     /**
@@ -85,9 +87,10 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit($id)
     {
-        //
+        // $data = User::find($id);
+        // return view('user.edit', compact('data'));
     }
 
     /**
@@ -97,9 +100,13 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, $id)
     {
-        //
+        // $data = Admin::find($id);
+        // $data->update($request->all());
+        // return redirect()->route('user.show', $data);
+
+        
     }
 
     /**
@@ -108,8 +115,12 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-        //
+        $del = Admin::where('id', $id)->delete();
+        if ($del) {
+            $data = Admin::all();
+            return redirect()->route('user.index', compact('data'));
+        }
     }
 }

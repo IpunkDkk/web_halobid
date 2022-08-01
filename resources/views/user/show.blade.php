@@ -21,7 +21,7 @@
                       <div class="card-body">
                         <div class="form-group">
                           <label for="name">Nama</label>
-                          <input type="name" name="name" value="{{ $data->name }}" class="form-control" id="name" disabled>
+                          <input type="text" name="name" value="{{ $data->name }}" class="form-control" id="name" disabled>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -29,11 +29,11 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Level</label>
-                            <input type="role" name="role" value="{{ $data->role }}" class="form-control" id="role" disabled>
+                            <input type="text" name="role" class="form-control" id="role" disabled>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" value="{{ $data->password }}" class="form-control" id="password" disabled>
+                            <input type="password" name="password" class="form-control" id="password" disabled>
                         </div>
                       <div class="card-footer">
                         <button type="button" onclick="window.history.back()" class="btn btn-warning">Kembali</button>

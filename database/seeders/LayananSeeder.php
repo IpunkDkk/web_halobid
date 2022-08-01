@@ -16,7 +16,7 @@ class LayananSeeder extends Seeder
     public function run()
     {
         Layanan::create( [
-            'layanan' => 'USG'
+            'layanan' => 'Bantuan Persalinan'
            ]) ;
     }
 }

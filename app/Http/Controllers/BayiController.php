@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bayi;
+use App\Models\Pantaubayi;
 use Illuminate\Http\Request;
 
 class BayiController extends Controller
@@ -57,7 +58,10 @@ class BayiController extends Controller
     public function show($id)
     {
         $data = Bayi::find($id);
-        return view('bayi.show', compact('data'));
+        $pantau = Pantaubayi::where('bayi_id', $id)->get();
+        // $date = date('Y:m:d H:i:s',strtotime($pantau[0]->created_at));
+        // dd($date);
+        return view('bayi.show', compact(['data', 'pantau']));
     }
 
     /**

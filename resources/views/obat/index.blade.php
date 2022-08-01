@@ -33,7 +33,7 @@
                             <th style="width: 1%">#</th>
                             <th style="width: 30%">Nama Obat</th>
                             <th style="width: 30%">Harga Obat</th>
-                            <th style="width: 20%">Aksi</th>
+                            <th style="width: 12%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,19 +45,16 @@
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
                                         <a class="btn btn-primary btn-sm m-1" href="{{ route('obat.show', $item->id) }}}">
-                                            <i class="fas fa-folder"></i>
-                                            View
+                                            <i class="fas fa-eye"></i>
                                         </a>
                                         <a class="btn btn-warning btn-sm m-1" href="{{ route('obat.edit', $item->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
-                                            Edit
                                         </a>
                                         <form method="post" action="{{ route('obat.destroy', $item->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm m-1" href="#" >
                                                 <i class="fas fa-trash"></i>
-                                                Delete
                                             </button>
                                         </form>
                                     </div>

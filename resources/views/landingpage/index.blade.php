@@ -98,10 +98,10 @@
                             <img src="dist/image/layanan/periksa kehamilan.png" alt="Periksa Kehamilan">
                         </a>
                         <a href="#" class="max-w-[120px] mx-4 py-4">
-                            <img src="dist/image/layanan/bantuan persalinan.png" alt="Bantuan Persalinan">
-                        </a>
-                        <a href="#" class="max-w-[120px] mx-4 py-4">
                             <img src="dist/image/layanan/kb.png" alt="Keluarga Berencana">
+                        </a>
+                        {{-- <a href="#" class="max-w-[120px] mx-4 py-4">
+                            <img src="dist/image/layanan/bantuan persalinan.png" alt="Bantuan Persalinan">
                         </a>
                         <a href="#" class="max-w-[120px] mx-4 py-4">
                             <img src="dist/image/layanan/baby spa.png" alt="Baby Spa">
@@ -111,7 +111,7 @@
                         </a>
                         <a href="#" class="max-w-[120px] mx-4 py-4">
                             <img src="dist/image/layanan/homecare.png" alt="Homecare">
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div> 
@@ -247,7 +247,7 @@
                 <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
                     <h2 class="font-bold text-4xl text-white mb-5">HaloBid</h2>
                     <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
-                    <p>halobid@uim.ac.id</p>
+                    <p>halobid@gmail.com</p>
                     <p>Jl. Raya Lang-dulang, Sana tengah Pasean</p>
                     <p>Pamekasan</p>
                 </div>
@@ -255,10 +255,10 @@
                     <h3 class="font-semibold text-xl text-white mb-5">Kategori Tulisan</h3>
                     <ul class="text-slate-300">
                         <li>
-                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Design</a>
+                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Kesehatan</a>
                         </li>
                         <li>
-                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Teknologi</a>
+                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Gizi</a>
                         </li>
                         <li>
                             <a href="#" class="inline-block text-base hover:text-primary mb-3">Gaya Hidup</a>

@@ -30,41 +30,15 @@
                       @csrf
                       <div class="card-body">
                         <div class="form-group">
-                          <label for="pasien_id">Pasien</label>
-                            <select name="pasien_id" class="custom-select rounded-0" id="pasien_id">
-                                @foreach ($pasien as $item)
-                                    <option value="{{ $item->id }}">{{ $item->nama_pasien }}</option>                                
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="bidan_id">Bidan</label>
-                            <select name="bidan_id" class="custom-select rounded-0" id="bidan_id">
-                                @foreach ($bidan as $item)
-                                    <option value="{{ $item->id }}">{{ $item->nama_bidan }}</option>                                
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="layanan_id">Layanan</label>
-                            <select name="layanan_id" class="custom-select rounded-0" id="layanan_id">
-                                @foreach ($layanan as $item)
-                                    <option value="{{ $item->id }}">{{ $item->layanan }}</option>                                
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="keluhan">Keluhan</label>
-                            <input type="text" name="keluhan" class="form-control" id="keluhan" placeholder="Keluhan">
-                        </div>
-                        <div class="form-group">
-                            <label for="saran">Saran</label>
-                            <input type="text" name="saran" class="form-control" id="saran" placeholder="Saran">
+                          <label for="bidan_id">Nama Bidan</label>
+                          <select name="bidan_id" class="custom-select rounded-0" id="bidan_id">
+                            @foreach ($bidan as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama_bidan }}</option>                                
+                            @endforeach
+                          </select>
                         </div>
                       </div>
-                      </div>
-                      <!-- /.card-body -->
-      
+                    </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>
                       </div>

@@ -9,20 +9,21 @@ class Konsultasi extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['pasien_id', 'bidan_id', 'layanan_id', 'keluhan', 'saran'];
-
-    public function pasien()
-    {
-        return $this->belongsTo(Pasien::class);
-    }
+    protected $fillable = 
+    [
+        'judul _konsultasi',
+        'isi_pesan',
+        'bidan_id',
+        'user_id',
+    ];
 
     public function bidan()
     {
         return $this->belongsTo(Bidan::class);
     }
 
-    public function layanan()
+    public function users()
     {
-        return $this->belongsTo(Layanan::class);
+        return $this->belongsTo(User::class);
     }
 }

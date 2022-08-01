@@ -17,9 +17,17 @@ class BayiSeeder extends Seeder
     {
         Bayi::create( [
             'nama_bayi' => 'Ahdan',
-            'nik_bayi' => '3528130312990001',
+            'tmp_lahir' => 'Pamekasan',
+            'tgl_lahir' => '2020-02-20',
             'jk_bayi' => 'L',
-            'usia_bayi' => '2'
+            'nama_ibu' => 'Siti',
+            'nama_ayah' =>'Ahmad',
+            'anak_ke' => '3',
+            'brt_lahir' => '1',
+            'pjg_lahir' => '60',
+            'usia' => '2tahun, 0bulan, 10hari',
+            'ket_pemeriksaan' => 'Bayi Sehat, aktif'
            ]) ;
     }
 }
+

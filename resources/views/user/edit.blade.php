@@ -32,18 +32,24 @@
                             <input type="email" name="email" value="{{ $data->email }}" class="form-control" id="email">
                         </div>
                         <div class="form-group">
-                            <label for="role">Level</label>
-                            <input type="role" name="role" value="{{ $data->role }}" class="form-control" id="role">
+                            <label>Level</label>
+                            <select id="role" name="role" class="form-control">
+                              <option>Pilih...</option>
+                              <option>Admin</option>
+                              <option>Bidan</option>
+                              <option>Kader</option>
+                              <option>User</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" value="{{ $data->password }}" class="form-control" id="password">
+                            <input type="password" name="password" class="form-control" id="password">
                         </div>
                         </div>
                         </div>
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Update</button>
-                        <button type="button" onclick="window.history.back()" class="btn btn-danger">Batal</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="button" onclick="window.history.back()" class="btn btn-danger">Batal</button>
                         </div>
                     </form>
                     </div>

@@ -23,7 +23,7 @@
                         <div class="card-body">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="name" name="name" class="form-control" id="name" placeholder="Masukkan nama">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan nama">
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
@@ -34,8 +34,14 @@
                             <input type="email" name="email" class="form-control" id="email" placeholder="email">
                         </div>
                         <div class="form-group">
-                            <label for="role">Level</label>
-                            <input type="role" name="role" class="form-control" id="role" placeholder="...">
+                            <label>Level</label>
+                            <select id="role" name="role" class="form-control">
+                              <option>Pilih...</option>
+                              <option>Admin</option>
+                              <option>Bidan</option>
+                              <option>Kader</option>
+                              <option>User</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>

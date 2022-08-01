@@ -15,4 +15,9 @@ class Bidan extends Model
     {
         return $this->hasOne(Posyandu::class);
     }
+
+    public function konsultasi()
+    {
+        return $this->hasOne(Konsultasi::class);
+    }
 }

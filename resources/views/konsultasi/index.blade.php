@@ -5,11 +5,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Data Konsultasi</h1>
-                </div>
-            </div>
+            
         </div><!-- /.container-fluid -->
         </section>
 
@@ -17,7 +13,7 @@
         <section class="content">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title mt-2">Daftar Konsultasi</h3>
+                    <h3 class="card-title mt-2">Chat dengan Bidan</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -35,41 +31,21 @@
                     <thead>
                         <tr class="text-center">
                             <th style="width: 1%">#</th>
-                            <th>Pasien</th>
-                            <th>Bidan</th>
-                            <th>Layanan</th>
-                            <th>Keluhan</th>
-                            <th>Saran</th>
-                            <th style="width: 20%">Aksi</th>
+                            <th>BIDAN</th>
+                            <th>AKSI</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->pasien->nama_pasien }}</td>
                                 <td>{{ $item->bidan->nama_bidan }}</td>
-                                <td>{{ $item->layanan }}</td>
-                                <td>{{ $item->keluhan }}</td>
-                                <td>{{ $item->saran }}</td> 
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
-                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('konsultasi.show', $item->id) }}">
-                                            <i class="fas fa-folder"></i>
-                                            View
+                                        <a class="btn btn-danger btn-sm m-1" href="{{ route('konsultasi.show', $item->id) }}">
+                                            <i class="fas fa-envelope mr-1"></i>
+                                            Chat
                                             </a>
-                                        <a class="btn btn-warning btn-sm m-1" href="{{ route('konsultasi.edit', $item->id) }}">
-                                            <i class="fas fa-pencil-alt"></i>
-                                            Edit
-                                        </a>
-                                        <form method="post" action="{{ route('konsultasi.destroy', $item->id) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger btn-sm m-1" href="#">
-                                            <i class="fas fa-trash"></i>
-                                            Delete
-                                            </button>
-                                        </form>
                                     </div>
                                 </td> 
                             </tr>                            

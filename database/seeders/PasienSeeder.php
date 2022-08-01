@@ -18,8 +18,8 @@ class PasienSeeder extends Seeder
         Pasien::create( [
             'nama_pasien' => 'Livia',
             'nik' => '3528130312990001',
-            'alamat'=> 'Pasian',
-            'Jenis_kelamin' => 'P',
+            'alamat'=> 'Pasean',
+            'jenis_kelamin' => 'P',
             'usia' => '21',
             'no_hp' => '123'
            ]) ;

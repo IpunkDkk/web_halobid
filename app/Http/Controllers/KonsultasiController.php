@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bidan;
 use App\Models\Konsultasi;
 use Illuminate\Http\Request;
 
@@ -26,10 +27,8 @@ class KonsultasiController extends Controller
      */
     public function create()
     {
-        $pasien = Konsultasi::all();
-        $bidan = Konsultasi::all();
-        $layanan = Konsultasi::all();
-        return view('konsultasi.create', compact('pasien', 'bidan', 'layanan'));
+        $bidan = Bidan::all();
+        return view('konsultasi.create', compact('bidan'));
     }
 
     /**
@@ -59,9 +58,7 @@ class KonsultasiController extends Controller
      */
     public function show($id)
     {
-        $data = Konsultasi::with('pasien')->first();
         $data = Konsultasi::with('bidan')->first();
-        $data = Konsultasi::with('layanan')->first();
         // dd($data);
         return view('konsultasi.show', compact('data'));
     }

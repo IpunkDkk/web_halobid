@@ -17,16 +17,28 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Taufiq',
+            'name' => 'Taufiqur RM',
             'username' => 'admin',
-            'email' => 'taufiq@uim.ac.id',
+            'email' => 'admin@halobid.com',
             'password' => Hash::make('admin')
         ]);
         User::create([
-            'name' => 'Taufiq1',
-            'username' => 'admin1',
-            'email' => 'taufiq1@uim.ac.id',
-            'password' => Hash::make('admin')
+            'name' => 'Nasidatul Q',
+            'username' => 'bidan',
+            'email' => 'bidan@halobid.com',
+            'password' => Hash::make('bidan')
+        ]);
+        User::create([
+            'name' => 'Titin',
+            'username' => 'kader',
+            'email' => 'kader@halobid.com',
+            'password' => Hash::make('kader')
+        ]);
+        User::create([
+            'name' => 'Ani',
+            'username' => 'user',
+            'email' => 'user@halobid.com',
+            'password' => Hash::make('user')
         ]);
     }
 }

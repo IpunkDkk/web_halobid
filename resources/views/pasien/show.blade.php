@@ -30,27 +30,27 @@
                       <div class="card-body">
                         <div class="form-group">
                           <label for="nama_pasien">Nama</label>
-                          <input type="nama_pasien" name="nama_pasien" value="{{ $data->nama_pasien }}" class="form-control" id="nama_pasien" placeholder="Masukkan nama" disabled>
+                          <input type="nama_pasien" name="nama_pasien" value="{{ $data->nama_pasien }}" class="form-control" id="nama_pasien" disabled>
                         </div>
                         <div class="form-group">
                             <label for="alamat">NIK</label>
-                            <input type="nik" name="nik" value="{{ $data->nik }}" class="form-control" id="nik" placeholder="NIK" disabled>
+                            <input type="nik" name="nik" value="{{ $data->nik }}" class="form-control" id="nik" disabled>
                           </div>
                           <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <input type="alamat" name="alamat" value="{{ $data->alamat }}" class="form-control" id="alamat" placeholder="Alamat" disabled>
+                            <input type="alamat" name="alamat" value="{{ $data->alamat }}" class="form-control" id="alamat" disabled>
                           </div>
                           <div class="form-group">
                             <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <input type="jenis_kelamin" name="jenis_kelamin" value="{{ $data->jenis_kelamin }}" class="form-control" id="jenis_kelamin" placeholder="L/P" disabled>
+                            <input type="jenis_kelamin" name="jenis_kelamin" value="{{ $data->jenis_kelamin }}" class="form-control" id="jenis_kelamin" disabled>
                           </div>
                           <div class="form-group">
                             <label for="usia">Usia</label>
-                            <input type="usia" name="usia" value="{{ $data->usia }}" class="form-control" id="usia" placeholder="Usia" disabled>
+                            <input type="usia" name="usia" value="{{ $data->usia }}" class="form-control" id="usia" disabled>
                           </div>
                           <div class="form-group">
                               <label for="no_hp">No. HP</label>
-                              <input type="no_hp" name="no_hp" value="{{ $data->no_hp }}" class="form-control" id="no_hp" placeholder="No. HP" disabled>
+                              <input type="no_hp" name="no_hp" value="{{ $data->no_hp }}" class="form-control" id="no_hp" disabled>
                           </div>
                           <div class="form-group">
                             <label for="foto">Foto</label>

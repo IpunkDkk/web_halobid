@@ -41,7 +41,7 @@
                                 <th>Jenis Kelamin</th>
                                 <th>Usia</th>
                                 <th>No. HP</th>
-                                <th style="width: 20%">Aksi</th>
+                                <th style="width: 12%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,19 +57,16 @@
                                     <td class="project-actions text-center">
                                         <div class="row justify-content-center align-item-center">
                                             <a class="btn btn-primary btn-sm m-1" href="{{ route('pasien.show', $item->id) }}">
-                                                <i class="fas fa-folder"></i>
-                                                View
+                                                <i class="fas fa-eye"></i>
                                             </a>
                                             <a class="btn btn-warning btn-sm m-1" href="{{ route('pasien.edit', $item->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
-                                                Edit
                                             </a>
                                             <form method="post" action="{{ route('pasien.destroy', $item->id) }}">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger btn-sm m-1" href="#">
                                                     <i class="fas fa-trash"></i>
-                                                    Delete
                                                 </button>
                                             </form>
                                         </div>

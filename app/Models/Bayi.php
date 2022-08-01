@@ -11,9 +11,18 @@ class Bayi extends Model
 
     protected $fillable = [
         'nama_bayi',
-        'nik_bayi',
+        'tmp_lahir',
+        'tgl_lahir',
         'jk_bayi',
-        'usia_bayi'
+        'nama_ibu',
+        'nama_ayah',
+        'anak_ke',
+        'brt_lahir',
+        'pjg_lahir',
+        'usia',
+        // 'brt_sekarang',
+        // 'pjg_sekarang',
+        'ket_pemeriksaan'
     ];
 
     // public function medis()

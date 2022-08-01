@@ -29,26 +29,26 @@
                 <form method="POST" action="{{ route('posyandu.store') }}">
                     @csrf
                     <div class="card-body">
-                    <div class="form-group">
-                        <label for="nama">Nama Posyandu</label>
-                        <input type="nama" name="nama" class="form-control" id="nama" placeholder="Masukkan nama Posyandu">
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <input type="alamat" name="alamat" class="form-control" id="alamat" placeholder="Alamat">
-                    </div>
-                    <div class="form-group">
-                        <label for="no_telepon">No. Telepon</label>
-                        <input type="no_telepon" name="no_telepon" class="form-control" id="no_telepon" placeholder="No. Telepon">
-                    </div>
-                    <div class="form-group">
-                        <label for="bidan_id">Bidan</label>
-                        <select name="bidan_id" class="custom-select rounded-0" id="bidan_id">
-                        @foreach ($bidan as $item)
-                            <option value="{{ $item->id }}">{{ $item->nama_bidan }}</option>                                
-                        @endforeach
-                        </select>
-                      </div>
+                        <div class="form-group">
+                            <label for="nama">Nama Posyandu</label>
+                            <input type="nama" name="nama" class="form-control" id="nama" placeholder="Masukkan nama Posyandu">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <input type="alamat" name="alamat" class="form-control" id="alamat" placeholder="Alamat">
+                        </div>
+                        <div class="form-group">
+                            <label for="no_telepon">No. Telepon</label>
+                            <input type="no_telepon" name="no_telepon" class="form-control" id="no_telepon" placeholder="No. Telepon">
+                        </div>
+                        <div class="form-group">
+                            <label for="bidan_id">Bidan</label>
+                            <select name="bidan_id" class="custom-select rounded-0" id="bidan_id">
+                            @foreach ($bidan as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama_bidan }}</option>                                
+                            @endforeach
+                            </select>
+                        </div>
                     </div>
                     </div>
                     <div class="card-footer">

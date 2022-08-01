@@ -1,6 +1,9 @@
 @extends('layouts.index')
 
 @section('content')
+@php
+    // dd($data)
+@endphp
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -31,19 +34,13 @@
                     <thead>
                         <tr class="text-center">
                             <th style="width: 1%">#</th>
-                            <th style="width: 30%">Nama Bayi</th>
-                            @if (auth()->user()->role->role == 'user')
-                                
-                            @else
-                            <th style="width: 30%">NIK</th>
-                            @endif
-                            <th style="width: 5%">L/P</th>
-                            <th style="width: 5%">Usia</th>
-                            @if (auth()->user()->role->role == 'user')
-                                
-                            @else
-                            <th style="width: 20%">Aksi</th>
-                            @endif
+                            <th>NAMA LENGKAP</th>                          
+                            <th>TEMPAT LAHIR</th>
+                            <th>TANGGAL LAHIR</th>
+                            <th>L/P</th>
+                            <th style="width: 15%">IBU</th>
+                            <th style="width: 15%">AYAH</th>
+                            <th style="width: 12%">AKSI</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,38 +48,28 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->nama_bayi }}</td>
-                                @if (auth()->user()->role->role == 'user')
-                                    
-                                @else
-                                <td>{{ $item->nik_bayi }}</td>
-                                @endif
+                                <td>{{ $item->tmp_lahir }}</td>
+                                <td>{{ $item->tgl_lahir }}</td>
                                 <td>{{ $item->jk_bayi }}</td>
-                                <td>{{ $item->usia_bayi }}</td>
-                                @if (auth()->user()->role->role == 'user')
-                                    
-                                @else
-                                    
+                                <td>{{ $item->nama_ibu }}</td>
+                                <td>{{ $item->nama_ayah }}</td>
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
-                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('bayi.show', $item->id) }}}">
-                                            <i class="fas fa-folder"></i>
-                                            View
+                                        <a class="btn btn-primary btn-sm m-1" href="{{ route('bayi.show', $item->id) }}">
+                                            <i class="fas fa-eye"></i>
                                         </a>
                                         <a class="btn btn-warning btn-sm m-1" href="{{ route('bayi.edit', $item->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
-                                            Edit
                                         </a>
                                         <form method="post" action="{{ route('bayi.destroy', $item->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm m-1" href="#" >
                                                 <i class="fas fa-trash"></i>
-                                                Delete
                                             </button>
                                         </form>
                                     </div>
                                 </td> 
-                                @endif
                             </tr>                            
                         @endforeach
                     </tbody>
