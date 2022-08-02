@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Unique;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -29,7 +31,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-      //      
+        //      
     }
 
     /**
@@ -40,27 +42,43 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nama' => 'required|max:255',
-            'username' => ['required', 'min:3', 'max:10', 'unique:users'],
-            'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:3|max:10'
-        ]);
+        // dd($request->all());
 
-        
+        // $this->validate($request, [
+        //     'nama' => 'required|max:255',
+        //     'username' => ['required', 'min:3', 'max:10', 'unique:users'],
+        //     'email' => 'required|email:dns|unique:users',
+        //     'password' => 'required|min:3|max:10'
+        // ]);
+
+
 
         // $validateData['password'] = Hash::make($validateData['password']);
-        $password = Hash::make($request->password);      
-        User::create([
+        $password = Hash::make($request->password);
+        $user = User::create([
             'name' => $request->nama,
-            'username'=> $request->username,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => $password
         ]);
 
         // dd('Berhasil');
+        if ($user) {
+            $id = $user->id;
+            $role = Role::create([
+                'user_id' => $id,
+                'role' => 'user'
+            ]);
+            // $data = DB::table('users')->join('roles', 'roles.user_id', '=', 'users.id')
+            //     ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+            // return view('user.index', compact(['data']));
+            return redirect()->route('login');
+            // return view('user.create');
+        } else {
+            return redirect()->route('register');
+        }
 
-        return redirect()->route('login')->with('Success', 'Register berhasil!, silahkan login');
+        // return redirect()->route('login')->with('Success', 'Register berhasil!, silahkan login');
     }
 
     /**
