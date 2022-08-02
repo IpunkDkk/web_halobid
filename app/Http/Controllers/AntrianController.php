@@ -84,7 +84,7 @@ class AntrianController extends Controller
     {
         $data = Antrian::where('id',$id)->first();
         $data->update($request->all());
-        return redirect()->route('antrian.show', $data);
+        return redirect()->route('antrian.index', $data);
     }
 
     /**
