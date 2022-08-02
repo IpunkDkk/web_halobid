@@ -16,9 +16,21 @@ class PosyanduSeeder extends Seeder
     public function run()
     {
         Posyandu::create([
-            'nama' => 'Pasean',
-            'no_telepon' => '123',
-            'alamat' => 'Pasean',
+            'nama' => 'Tareta',
+            'no_telepon' => '087888666912',
+            'alamat' => 'Tareta',
+            'bidan_id' => 1
+        ]);
+        Posyandu::create([
+            'nama' => 'Bunguplong',
+            'no_telepon' => '085336104481',
+            'alamat' => 'Bunguplong',
+            'bidan_id' => 1
+        ]);
+        Posyandu::create([
+            'nama' => 'Sumber Pinang',
+            'no_telepon' => '085121290901',
+            'alamat' => 'Sumber Pinang',
             'bidan_id' => 1
         ]);
     }

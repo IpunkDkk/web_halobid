@@ -84,8 +84,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('persalinan', PersalinanController::class)->middleware('auth');
 
     Route::resource('konsultasi', KonsultasiController::class)->middleware('auth');
-    Route::resource('licechat', LivechatController::class)->middleware('auth');
-
+    
     Route::resource('user', AdminController::class)->middleware('auth');
 
     Route::resource('mitra', MitraController::class)->middleware('auth');

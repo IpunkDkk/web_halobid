@@ -46,7 +46,7 @@
             <ul class="nav nav-treeview">
                 <li class="nav-item {{ 'antrian' == request()->path() ? 'menu-open' : '' }}">
                   <a href="{{ route('antrian.index') }}" class="nav-link {{ 'admin/antrian' == request()->path() ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-power-off"></i>
+                    <i class="nav-icon fas fa-spinner"></i>
                     <p>Antrian</p>
                   </a>
                 </li>
@@ -108,7 +108,7 @@
           </ul>
         </li>
           
-          <li class="nav-header">Data Layanan</li>
+          {{-- <li class="nav-header">Data Layanan</li> --}}
           {{-- <li class="nav-item {{ 'konsultasi' == request()->path() ? 'menu-open' : '' }}">
             <a href="{{ route('konsultasi.index') }}" class="nav-link {{ 'admin/konsultasi' == request()->path() ? 'active' : '' }}">
               <i class="nav-icon fas fa-solid fa-comment-dots"></i>
@@ -281,14 +281,6 @@
                         
                     </ul>
                 </li>
-                  
-                  {{-- <li class="nav-header">Data Layanan</li>
-                  <li class="nav-item {{ 'konsultasi' == request()->path() ? 'menu-open' : '' }}">
-                    <a href="{{ route('konsultasi.index') }}" class="nav-link {{ 'admin/konsultasi' == request()->path() ? 'active' : '' }}">
-                      <i class="nav-icon fas fa-solid fa-comment-dots"></i>
-                      <p>Konsultasi</p>
-                    </a>
-                  </li> --}}
                   <li class="nav-item {{ 'logout' == request()->path() ? 'menu-open' : '' }}">
                   <a href="/logout" class="nav-link {{ 'logout' == request()->path() ? 'active' : '' }}">
                       <i class="nav-icon fas fa-power-off"></i>

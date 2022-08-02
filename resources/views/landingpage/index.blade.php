@@ -42,7 +42,7 @@
                                 <a href="#konsultasi" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Konsultasi</a>
                             </li>
                             <li class="group">
-                                <a href="/login" class="text-base font-bold text-dark py-2 mx-8 flex group-hover:text-primary">Login</a>
+                                <a href="/pralogin" class="text-base font-bold text-dark py-2 mx-8 flex group-hover:text-primary">Login</a>
                             </li>
                         </ul>
                     </nav>

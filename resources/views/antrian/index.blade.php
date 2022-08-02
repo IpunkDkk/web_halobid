@@ -46,7 +46,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->no_antrian }}</td>
                                 <td>{{ $item->ket_antrian }}</td>
-                                <td>{{ $item->status }}</td>
+                                <td>
+                                    @if ($item->status == 'Sudah')
+                                        <span class="right badge badge-success">{{ $item->status }}</span>
+                                    @else
+                                        <span class="right badge badge-danger">{{ $item->status }}</span>
+                                    @endif
+                                    
+                                </td>
+                                
 
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
