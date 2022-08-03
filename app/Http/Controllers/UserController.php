@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function login(Request $request){
         $email = User::where('email', $request->email)->first();
-        // dd($email);
+//         dd($email->em);
         if ($email){
             if ($request->pralogin == $email->posyandu->nama){
                 if (Hash::check($request->password, $email->password)){
@@ -44,6 +44,7 @@ class UserController extends Controller
                     }
                 }
             }else if($email->role->role == 'superadmin'){
+                dd($email->role->role);
                 if (Hash::check($request->password, $email->password)){
                     if(Auth::attempt(['email' => $request->email, 'password' => $request->password], remember:1)){
                         $request->session()->regenerate();
