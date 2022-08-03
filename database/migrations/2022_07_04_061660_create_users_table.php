@@ -13,14 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('name');
             $table->string('username');
-            $table->string('pasword');
-            $table->string('foto');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->unsignedBigInteger('posyandu_id');
+
             $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
+            // $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('users');
     }
 };

@@ -17,12 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = 
+    protected $fillable =
     [
         'name',
         'username',
         'email',
         'password',
+        'posyandu_id'
     ];
 
     /**
@@ -52,5 +53,8 @@ class User extends Authenticatable
     public function konsultasi()
     {
         return $this->hasOne(Konsultasi::class);
+    }
+    public function posyandu(){
+        return $this->belongsTo(Posyandu::class);
     }
 }

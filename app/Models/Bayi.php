@@ -22,7 +22,8 @@ class Bayi extends Model
         'usia',
         // 'brt_sekarang',
         // 'pjg_sekarang',
-        'ket_pemeriksaan'
+        'ket_pemeriksaan',
+        'posyandu_id'
     ];
 
     // public function medis()

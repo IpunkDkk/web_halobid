@@ -69,6 +69,7 @@
                                   <label for="usia">Usia</label>
                                   <input name="usia" class="form-control" id="usia" placeholder=".. cm" required>
                                 </div>
+                                  <input name="posyandu_id" value="{{auth()->user()->posyandu->id}}" hidden>
                                 {{-- <div class="form-group">
                                   <label for="brt_sekarang">Berat Sekarang</label>
                                   <input type="text" name="brt_sekarang" class="form-control" id="brt_sekarang" placeholder=".. kg" required>
@@ -84,7 +85,7 @@
                               </div>
                             </div>
                         </div>
-                          
+
                         <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>

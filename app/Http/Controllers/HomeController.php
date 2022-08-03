@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Antrian;
+use App\Models\Bayi;
+use App\Models\Bidan;
+use App\Models\Bumil;
+use App\Models\Kb;
+use App\Models\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -14,16 +21,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $bidan = DB::table('bidans')->count();
-        $pasien = DB::table('pasiens')->count();
-        $petugas = DB::table('petugas')->count();
-        $bayi = DB::table('bayis')->count();
-        $imunisasi = DB::table('imunisasis')->count();
-        $obat = DB::table('obats')->count();
-        $layanan = DB::table('layanans')->count();
-        $mitra = DB::table('mitras')->count();
-        // dd($bidan);
-        return view('home', compact(['bidan', 'pasien', 'petugas', 'bayi', 'imunisasi', 'obat', 'layanan', 'mitra']));
+        if (Auth::user()->role->role == 'superadmin'){
+            $posyandu = Posyandu::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $antrian = Antrian::all()->count();
+            $bumil = Bumil::all()->count();
+            $bayi = Bayi::all()->count();
+            $kb = Kb::all()->count();
+            $bidan = Bidan::all()->count();
+        }else{
+            $posyandu = 0;
+            $antrian = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $bidan = Bidan::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $bayi = Bayi::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $bumil = Bumil::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $kb = Kb::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+        }
+
+        return view('home', compact([
+            'antrian',
+            'posyandu',
+            'bidan',
+            'bayi',
+            'bumil',
+            'kb',
+        ]));
     }
 
     /**

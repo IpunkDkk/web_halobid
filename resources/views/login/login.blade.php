@@ -22,11 +22,14 @@
               </div>
             </div>
           </div>
+            <div class="input-group mb-4">
+                <input type="text" name="pralogin" value="{{ app('request')->input('pralogin') }}" class="form-control" hidden>
+            </div>
             <div>
               <button  type="submit" class=" w-100 btn btn-primary btn-block">Login</button>
             </div>
         </form>
           <small class="d-block text-center mt-3">Belum punya akun? <a href="/register">Daftar sekarang!</a></small>
       </div>
-  </div>   
+  </div>
 @endsection

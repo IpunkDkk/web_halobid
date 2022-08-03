@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,8 +19,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = DB::table('users')->join('roles', 'roles.user_id', '=', 'users.id')
-            ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+        $data = User::all()->where('posyandu_id', '==', Auth::user()->posyandu->id);
         return view('user.index', compact(['data']));
     }
 
@@ -47,22 +47,24 @@ class AdminController extends Controller
         $password = Hash::make($request->password);
         $simpan = User::create([
             'name' => $request->name,
-            'username' => $request->username,
+            'username'=> $request->username,
             'email' => $request->email,
-            'password' => $password
+            'password' => $password,
+            'posyandu_id' => Auth::user()->posyandu->id,
         ]);
 
         if ($simpan) {
             $id = $simpan->id;
             $role = Role::create([
-                'user_id' => $id,
+                'user_id'=>$id,
                 'role' => $request->role
             ]);
-            $data = DB::table('users')->join('roles', 'roles.user_id', '=', 'users.id')
-                ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
-            return view('user.index', compact(['data']));
-            return redirect()->route('user.index', compact('data'));
-        } else {
+//            $data = DB::table('users')->join('roles', 'roles.user_id','=', 'users.id')
+//            ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
+//            return view('user.index', compact(['data']));
+            return redirect()->route('user.index');
+        }
+        else {
             return view('user.create');
         }
     }

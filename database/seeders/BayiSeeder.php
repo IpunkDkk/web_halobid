@@ -26,7 +26,8 @@ class BayiSeeder extends Seeder
             'brt_lahir' => '1',
             'pjg_lahir' => '60',
             'usia' => '2tahun, 0bulan, 10hari',
-            'ket_pemeriksaan' => 'Bayi Sehat, aktif'
+            'ket_pemeriksaan' => 'Bayi Sehat, aktif',
+            'posyandu_id' => 1,
            ]) ;
     }
 }

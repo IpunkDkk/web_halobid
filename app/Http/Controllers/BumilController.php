@@ -6,6 +6,7 @@ use App\Models\Bumil;
 use App\Models\Pantaubumil;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BumilController extends Controller
 {
@@ -21,7 +22,11 @@ class BumilController extends Controller
      */
     public function index()
     {
-        $data = Bumil::all();
+        if (Auth::user()->role->role == 'superadmin'){
+            $data = Bumil::all();
+        }else{
+            $data = Bumil::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
+        }
         return view('bumil.index', compact(['data']));
     }
 

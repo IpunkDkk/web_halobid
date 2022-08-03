@@ -24,28 +24,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-            AdminSeeder::class,
-            UserSeeder::class,
-            PasienSeeder::class,
-            BidanSeeder::class,
-            MitraSeeder::class,
-            LayananSeeder::class,
-            BlogSeeder::class,
             PosyanduSeeder::class,
-            KonsultasiSeeder::class,
-            BayiSeeder::class,
-            ImunisasiSeeder::class,
-            ObatSeeder::class,
-            MedisSeeder::class,
-            PetugasSeeder::class,
+            UserSeeder::class,
             RoleSeeder::class,
-            PersalinanSeeder::class,
-            BumilSeeder::class,
-            KbSeeder::class,
-            PantaubumilSeeder::class,
-            PantaubayiSeeder::class,
-            PantaukbSeeder::class,
-            AntrianSeeder::class
         ]);
     }
 }

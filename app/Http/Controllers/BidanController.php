@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bidan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BidanController extends Controller
 {
@@ -20,8 +21,11 @@ class BidanController extends Controller
      */
     public function index()
     {
-        $data = Bidan::all();
-        // dd($data);
+        if (Auth::user()->role->role == 'superadmin'){
+            $data = Bidan::all();
+        }else{
+            $data = Bidan::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
+        }
         return view('bidan.index', compact(['data']));
     }
 

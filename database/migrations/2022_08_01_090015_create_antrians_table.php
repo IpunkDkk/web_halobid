@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('no_antrian');
             $table->string('ket_antrian');
             $table->enum('status', ['Sudah', 'Belum'])->default('Belum');
+
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

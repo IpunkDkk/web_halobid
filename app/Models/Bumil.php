@@ -10,21 +10,22 @@ class Bumil extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 
-        'tmp_lahir', 
-        'tgl_lahir', 
-        'nik', 
-        'kk', 
-        'status', 
-        'alamat', 
-        'pekerjaan', 
-        'no_hp', 
-        'suami', 
-        'anak_ke', 
-        'bb', 
-        'tensi', 
-        'usia_hamil', 
-        'catatan_pemeriksaan'
+        'nama',
+        'tmp_lahir',
+        'tgl_lahir',
+        'nik',
+        'kk',
+        'status',
+        'alamat',
+        'pekerjaan',
+        'no_hp',
+        'suami',
+        'anak_ke',
+        'bb',
+        'tensi',
+        'usia_hamil',
+        'catatan_pemeriksaan',
+        'posyandu_id'
     ];
 
     public function pantaubumil()

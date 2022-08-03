@@ -44,6 +44,7 @@
                           <label for="no_hp">No. HP</label>
                           <input type="no_hp" name="no_hp" class="form-control" id="no_hp" placeholder="No. HP">
                         </div>
+                        <input name="posyandu_id" value="{{ auth()->user()->posyandu->id }}" hidden />
                         <div class="form-group">
                           <label for="no_hp">Pendidikan</label>
                           <input type="pendidikan" name="pendidikan" class="form-control" id="pendidikan" placeholder="Pendidikan">

@@ -43,7 +43,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->role }}</td>
+                                <td>{{ $item->role->role }}</td>
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
                                         <a class="btn btn-primary btn-sm m-1" href="{{ route('user.show', $item->id) }}">
@@ -60,8 +60,8 @@
                                             </button>
                                         </form>
                                     </div>
-                                </td> 
-                            </tr>                            
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                     </table>

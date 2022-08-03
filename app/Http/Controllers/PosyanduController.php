@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bidan;
 use App\Models\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PosyanduController extends Controller
 {
@@ -15,7 +16,11 @@ class PosyanduController extends Controller
      */
     public function index()
     {
-        $data = Posyandu::with('bidan')->get();
+        if (Auth::user()->role->role == 'superadmin'){
+            $data = Posyandu::all();
+        }else{
+            $data = Posyandu::all()->where('id','==', Auth::user()->posyandu->id);
+        }
         return view('posyandu.index', compact(['data']));
     }
 

@@ -9,7 +9,7 @@ class Bidan extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'nama_bidan', 'alamat', 'no_str', 'no_hp', 'pendidikan', 'foto' ];
+    protected $fillable = [ 'nama_bidan', 'alamat', 'no_str', 'no_hp', 'pendidikan', 'foto', 'posyandu_id' ];
 
     public function posyandu()
     {
