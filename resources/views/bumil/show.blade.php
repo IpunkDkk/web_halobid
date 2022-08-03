@@ -86,7 +86,7 @@
                       </div>
                       <div class="card-footer">
                         <button type="button" onclick="window.history.back()" class="btn btn-warning">Kembali</button>
-                      </div>                    
+                      </div>
                   </div>
                 </div>
               </div>
@@ -98,17 +98,19 @@
               <div class="card-header">
                   <h2 class="card-title mt-2"><strong>Detail Ibu Hamil</strong></h2>
                     <div class="card-tools">
+                        @if (auth()->user()->role->role != 'User')
                         <a href="{{route('pantaubumil.show', $data->id)}}">
                             <button type="button" class="btn btn-success" title="Tambah">
                                 <i class="fas solid fa-plus mr-2" ></i>Pemeriksaan
                             </button>
                         </a>
+                        @endif
                         <button type="button" onclick="window.history.back()" class="btn btn-warning" title="Batal">
                           <i class="fas solid fa-arrow-left mr-2"></i>Batal
                         </button>
                     </div>
               </div>
-              
+
               <div class="row ">
                 <div class="col-sm-6 ">
                   <table class="table table-borderless">
@@ -185,8 +187,8 @@
                                         </button>
                                     </form>
                                 </div>
-                              </td> 
-                          </tr>   
+                              </td>
+                          </tr>
                         @endforeach
                       </tr>
                     </tbody>
