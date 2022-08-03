@@ -25,26 +25,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             PosyanduSeeder::class,
-            BidanSeeder::class,
             UserSeeder::class,
-//            PasienSeeder::class,
-//            MitraSeeder::class,
-//            LayananSeeder::class,
-//            BlogSeeder::class,
-//            KonsultasiSeeder::class,
-            BayiSeeder::class,
-//            ImunisasiSeeder::class,
-//            ObatSeeder::class,
-//            MedisSeeder::class,
-//            PetugasSeeder::class,
             RoleSeeder::class,
-//            PersalinanSeeder::class,
-            BumilSeeder::class,
-            KbSeeder::class,
-            PantaubumilSeeder::class,
-            PantaubayiSeeder::class,
-            PantaukbSeeder::class,
-            AntrianSeeder::class
         ]);
     }
 }
