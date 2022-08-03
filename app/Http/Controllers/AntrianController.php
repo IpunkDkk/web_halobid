@@ -137,6 +137,7 @@ class AntrianController extends Controller
     public function update(Request $request, $id)
     {
         $data = Antrian::where('id', $id)->first();
+        $data->update($request->all());
         return redirect()->route('antrian.index');
     }
 
