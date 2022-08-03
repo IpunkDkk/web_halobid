@@ -27,6 +27,7 @@
                             <label for="tgl_lahir">Tanggal Lahir</label>
                             <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="yy/mm/dd" required>
                           </div>
+                            <input name="posyandu_id" value="{{auth()->user()->posyandu->id}}" hidden>
                           <div class="form-group">
                             <label for="nik">NIK</label>
                             <input type="text" name="nik" class="form-control" id="nik" placeholder="NIK" required>

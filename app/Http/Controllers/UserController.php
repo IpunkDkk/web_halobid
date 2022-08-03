@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Posyandu;
 use App\Models\User;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
@@ -16,11 +17,19 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('login.login', [
-            'title' => 'Login'
-        ]);
+        if ($request->pralogin){
+//            dd($request->all());
+            return view('login.login', [
+                'title' => 'Login'
+            ]);
+        }else{
+            $posyandu = Posyandu::all();
+            $title = 'login';
+            return view('userlogin.userlogin', compact(['posyandu','title']));
+        }
+
     }
 
     public function login(Request $request){
@@ -33,7 +42,7 @@ class UserController extends Controller
                     return redirect()->route('admin');
                 }
                 // dd("login sukses");
-                // retirn 
+                // retirn
             }
             return redirect()->route('login');
         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Antrian;
 use App\Models\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AntrianController extends Controller
@@ -14,9 +15,13 @@ class AntrianController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Antrian::all();
+        if (Auth::user()->role->role == 'admin'){
+            $data = Antrian::all();
+        }else{
+            $data = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
+        }
         return view('antrian.index', compact(['data']));
     }
 
@@ -60,6 +65,7 @@ class AntrianController extends Controller
                 $antrian = Antrian::create([
                     'no_antrian' => $kode . $angka,
                     'ket_antrian' => $ket,
+                    'posyandu_id' => Auth::user()->posyandu->id,
 
                 ]);
                 return redirect()->route('antrian.index');
@@ -87,6 +93,7 @@ class AntrianController extends Controller
      */
     public function edit($id)
     {
+        // dd($request-)
         $data = Antrian::where('id', $id)->first();
         return view('antrian.edit', compact(['data']));
     }
@@ -101,8 +108,7 @@ class AntrianController extends Controller
     public function update(Request $request, $id)
     {
         $data = Antrian::where('id', $id)->first();
-        $data->update($request->all());
-        return redirect()->route('antrian.index', $data);
+        return redirect()->route('antrian.index');
     }
 
     /**

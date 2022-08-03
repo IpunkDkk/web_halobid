@@ -30,6 +30,8 @@ return new class extends Migration
             $table->integer('tensi');
             $table->integer('usia_hamil');
             $table->string('catatan_pemeriksaan');
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

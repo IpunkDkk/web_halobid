@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('username');
             $table->string('pasword');
             $table->string('foto');
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
