@@ -21,7 +21,7 @@ class BidanController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->role->role == 'admin'){
+        if (Auth::user()->role->role == 'superadmin'){
             $data = Bidan::all();
         }else{
             $data = Bidan::all()->where('posyandu_id','==', Auth::user()->posyandu->id);

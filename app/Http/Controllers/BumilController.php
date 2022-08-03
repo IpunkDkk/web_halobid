@@ -22,7 +22,7 @@ class BumilController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->role->role == 'admin'){
+        if (Auth::user()->role->role == 'superadmin'){
             $data = Bumil::all();
         }else{
             $data = Bumil::all()->where('posyandu_id','==', Auth::user()->posyandu->id);

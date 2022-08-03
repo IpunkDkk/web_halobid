@@ -19,8 +19,30 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Taufiqur RM',
             'username' => 'admin',
-            'email' => 'admin@halobid.com',
+            'email' => 'tareta@halobid.com',
             'posyandu_id' => 1,
+            'password' => Hash::make('admin')
+        ]);
+        User::create([
+            'name' => 'Taufiqur RM',
+            'username' => 'admin',
+            'email' => 'bungguplong@halobid.com',
+            'posyandu_id' => 2,
+            'password' => Hash::make('admin')
+        ]);
+
+        User::create([
+            'name' => 'Taufiqur RM',
+            'username' => 'superadmin',
+            'email' => 'admin@halobid.com',
+            'posyandu_id' => 2,
+            'password' => Hash::make('admin')
+        ]);
+        User::create([
+            'name' => 'Taufiqur RM',
+            'username' => 'admin',
+            'email' => 'sumberpinang@halobid.com',
+            'posyandu_id' => 3,
             'password' => Hash::make('admin')
         ]);
         User::create([

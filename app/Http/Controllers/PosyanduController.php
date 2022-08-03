@@ -16,7 +16,7 @@ class PosyanduController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->role->role == 'admin'){
+        if (Auth::user()->role->role == 'superadmin'){
             $data = Posyandu::all();
         }else{
             $data = Posyandu::all()->where('id','==', Auth::user()->posyandu->id);
