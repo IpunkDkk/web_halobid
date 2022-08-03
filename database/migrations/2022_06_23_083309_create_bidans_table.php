@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('no_str');
             $table->string('no_hp');
             $table->string('pendidikan');
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
             $table->string('foto')->nullable();
             $table->timestamps();
         });

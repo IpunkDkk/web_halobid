@@ -30,6 +30,10 @@ return new class extends Migration
             // $table->string('pjg_sekarang');
             $table->string('ket_pemeriksaan');
             $table->timestamps();
+
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
+
         });
     }
 

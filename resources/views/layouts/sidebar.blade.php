@@ -33,7 +33,7 @@
         <p>Dashboard</p>
       </a>
     </li>
-    
+
       <li class="nav-header">Data Master</li>
         <li class="nav-item">
               <a href="#" class="nav-link">
@@ -62,7 +62,7 @@
                     <p>Data Bidan</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item {{ 'bayi' == request()->path() ? 'menu-open' : '' }}">
                   <a href="{{ route('bumil.index') }}" class="nav-link {{ 'admin/bumil' == request()->path() ? 'active' : '' }}">
                     <i class="nav-icon fas fa-regular fa-wheelchair"></i>
@@ -107,7 +107,7 @@
             </li>
           </ul>
         </li>
-          
+
           {{-- <li class="nav-header">Data Layanan</li> --}}
           {{-- <li class="nav-item {{ 'konsultasi' == request()->path() ? 'menu-open' : '' }}">
             <a href="{{ route('konsultasi.index') }}" class="nav-link {{ 'admin/konsultasi' == request()->path() ? 'active' : '' }}">
@@ -156,7 +156,7 @@
                   <p>Konsultasi</p>
                 </a>
               </li> --}}
-              
+
               <li class="nav-item {{ 'logout' == request()->path() ? 'menu-open' : '' }}">
                 <a href="/logout" class="nav-link {{ 'logout' == request()->path() ? 'active' : '' }}">
                   <i class="nav-icon fas fa-power-off"></i>
@@ -182,7 +182,7 @@
                           <p>Data Bidan</p>
                         </a>
                       </li>
-                      
+
                       <li class="nav-item {{ 'bayi' == request()->path() ? 'menu-open' : '' }}">
                         <a href="{{ route('bumil.index') }}" class="nav-link {{ 'admin/bumil' == request()->path() ? 'active' : '' }}">
                           <i class="nav-icon fas fa-regular fa-wheelchair"></i>
@@ -227,7 +227,7 @@
                   </li>
                 </ul>
               </li>
-                
+
                 {{-- <li class="nav-header">Data Layanan</li>
                 <li class="nav-item {{ 'konsultasi' == request()->path() ? 'menu-open' : '' }}">
                   <a href="{{ route('konsultasi.index') }}" class="nav-link {{ 'admin/konsultasi' == request()->path() ? 'active' : '' }}">
@@ -278,7 +278,7 @@
                             <p>Data KB</p>
                           </a>
                         </li>
-                        
+
                     </ul>
                 </li>
                   <li class="nav-item {{ 'logout' == request()->path() ? 'menu-open' : '' }}">
@@ -359,7 +359,7 @@
 
 
       {{-- <li class="nav-header">Data Laporan</li> --}}
-    
+
               {{-- <li class="nav-item {{ 'persalinna' == request()->path() ? 'menu-open' : '' }}">
                 <a href="{{ route('persalinan.index') }}" class="nav-link {{ 'admin/layanan' == request()->path() ? 'active' : '' }}">
                   <i class="nav-icon fas fa-solid fa-briefcase-medical"></i>
@@ -372,15 +372,14 @@
                   <p>Transaksi Medis</p>
                 </a>
               </li> --}}
-              
-              {{-- 
+
+              {{--
               <li class="nav-item {{ 'blog' == request()->path() ? 'menu-open' : '' }}">
                 <a href="{{ route('blog.index') }}" class="nav-link {{ 'admin/blog' == request()->path() ? 'active' : '' }}">
                   <i class="nav-icon fas fa-globe"></i>
                   <p>Blog</p>
                 </a>
               </li> --}}
-              
-              
-           
-          
+
+
+

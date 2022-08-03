@@ -9,7 +9,7 @@ class Kb extends Model
 {
     use HasFactory;
 
-    protected $fillable = 
+    protected $fillable =
     [
         'nama',
         'tmp_lahir',
@@ -25,7 +25,8 @@ class Kb extends Model
         'tensi',
         'bb',
         'akseptor',
-        'ket_pemeriksaan'
+        'ket_pemeriksaan',
+        'posyandu_id'
     ];
 
     public function pantaukb()

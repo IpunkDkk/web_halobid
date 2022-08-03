@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('akseptor');
             $table->string('ket_pemeriksaan');
             $table->timestamps();
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
         });
     }
 

@@ -21,7 +21,8 @@ class PasienSeeder extends Seeder
             'alamat'=> 'Pasean',
             'jenis_kelamin' => 'P',
             'usia' => '21',
-            'no_hp' => '123'
+            'no_hp' => '123',
+            'posyandu_id' => 1,
            ]) ;
     }
 }

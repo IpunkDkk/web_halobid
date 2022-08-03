@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Antrian;
 use App\Models\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AntrianController extends Controller
@@ -14,9 +15,13 @@ class AntrianController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Antrian::all();
+        if (Auth::user()->role->role == 'admin'){
+            $data = Antrian::all();
+        }else{
+            $data = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
+        }
         return view('antrian.index', compact(['data']));
     }
 
@@ -42,13 +47,14 @@ class AntrianController extends Controller
         $antrian =  DB::table('antrians')->latest('created_at')->first();
         if ($antrian) {
             $no = $antrian->no_antrian;
-            if ('Taretah' == $request->status) // pasean diubah ke table posyandu user integreted
+            if (Auth::user()->posyandu->nama == $request->status) // pasean diubah ke table posyandu user integreted
             {
                 $kode = substr($no, 0, strlen($no) - 1); // get kode from nomer antrian
                 $angka = $no[strlen($no) - 1] + 1; // add + 1 from previus no antrian
                 $antrian = Antrian::create([
                     'no_antrian' => $kode . $angka,
                     'ket_antrian' => 'konsultasi',
+                    "posyandu_id" => Auth::user()->posyandu->id
 
                 ]);
                 return redirect()->route('antrian.index');
@@ -56,10 +62,11 @@ class AntrianController extends Controller
                 $kode = substr($no, 0, strlen($no) - 1); // get kode from nomer antrian
                 $angka = $no[strlen($no) - 1] + 1; // add + 1 from previus no antrian
                 $posyandu = 'taretah'; // merupakan posyandu yang dituju
-                $ket = "Pasien pindah domisili dari posyandu " . $request->status . ' ke ' . $posyandu;
+                $ket = "Pasien pindah domisili dari posyandu " . Auth::user()->posyandu->nama . ' ke ' . $request->status;
                 $antrian = Antrian::create([
                     'no_antrian' => $kode . $angka,
                     'ket_antrian' => $ket,
+                    'posyandu_id' => Auth::user()->posyandu->id,
 
                 ]);
                 return redirect()->route('antrian.index');
@@ -87,6 +94,7 @@ class AntrianController extends Controller
      */
     public function edit($id)
     {
+        // dd($request-)
         $data = Antrian::where('id', $id)->first();
         return view('antrian.edit', compact(['data']));
     }
@@ -101,8 +109,7 @@ class AntrianController extends Controller
     public function update(Request $request, $id)
     {
         $data = Antrian::where('id', $id)->first();
-        $data->update($request->all());
-        return redirect()->route('antrian.index', $data);
+        return redirect()->route('antrian.index');
     }
 
     /**

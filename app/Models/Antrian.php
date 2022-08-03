@@ -9,5 +9,5 @@ class Antrian extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['no_antrian', 'ket_antrian', 'status'];
+    protected $fillable = ['no_antrian', 'ket_antrian', 'status', 'posyandu_id'];
 }

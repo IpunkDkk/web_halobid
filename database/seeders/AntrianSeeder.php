@@ -18,7 +18,8 @@ class AntrianSeeder extends Seeder
         Antrian::create([
             'no_antrian' => 'P01',
             'ket_antrian' => 'Rujuk',
-            'status' => 'Belum'
+            'status' => 'Belum',
+            'posyandu_id' => 1,
         ]);
     }
 }

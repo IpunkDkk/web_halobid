@@ -16,21 +16,22 @@ class KbSeeder extends Seeder
     public function run()
     {
         Kb::create([
-            'nama' => 'Livia', 
-            'tmp_lahir' => 'Pamekasan', 
-            'tgl_lahir' => '1999-09-09', 
-            'nik' => '3528130312990001', 
-            'kk' => '352813031299002', 
-            'status' => 'Domisili Tetap', 
-            'alamat' => 'Sana tengah', 
-            'pekerjaan' => 'Dosen', 
-            'no_hp' => '087886952551', 
-            'suami' => 'Taufiqur RM', 
-            'jml_anak' => '5', 
-            'tensi' => '120', 
-            'bb' => '50', 
+            'nama' => 'Livia',
+            'tmp_lahir' => 'Pamekasan',
+            'tgl_lahir' => '1999-09-09',
+            'nik' => '3528130312990001',
+            'kk' => '352813031299002',
+            'status' => 'Domisili Tetap',
+            'alamat' => 'Sana tengah',
+            'pekerjaan' => 'Dosen',
+            'no_hp' => '087886952551',
+            'suami' => 'Taufiqur RM',
+            'jml_anak' => '5',
+            'tensi' => '120',
+            'bb' => '50',
             'akseptor' => 'KB Pil',
-            'ket_pemeriksaan' => 'Pertama menggunakan Pil KB'
+            'ket_pemeriksaan' => 'Pertama menggunakan Pil KB',
+            'posyandu_id' => 1,
         ]);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-    
+
         <!-- Content Header (Page header) -->
         <section class="content-header">
         <div class="container-fluid">
@@ -38,7 +38,6 @@
                             <th>Nama</th>
                             <th>No. Telepon</th>
                             <th>Alamat</th>
-                            <th>Bidan</th>
                             <th style="width: 12%">Aksi</th>
                         </tr>
                     </thead>
@@ -49,7 +48,6 @@
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->no_telepon }}</td>
                                 <td>{{ $item->alamat }}</td>
-                                <td>{{ $item->bidan->nama_bidan }}</td>
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
                                         <a class="btn btn-primary btn-sm m-1" href="{{ route('posyandu.show', $item->id) }}">
@@ -66,8 +64,8 @@
                                             </button>
                                         </form>
                                     </div>
-                                </td> 
-                            </tr>                            
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                     </table>
@@ -85,6 +83,6 @@
                 <!-- /.card -->
 
         </section>
-            
+
 
   @endsection

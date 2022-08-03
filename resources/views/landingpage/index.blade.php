@@ -23,7 +23,7 @@
                         <span class="hamburger-line transition duration-300"></span>
                         <span class="hamburger-line transition duration-300  origin-bottom-left"></span>
                     </button>
-                    
+
                     <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
                         <ul class="block lg:flex">
                             <li class="group">
@@ -42,7 +42,7 @@
                                 <a href="#konsultasi" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Konsultasi</a>
                             </li>
                             <li class="group">
-                                <a href="/pralogin" class="text-base font-bold text-dark py-2 mx-8 flex group-hover:text-primary">Login</a>
+                                <a href="/login" class="text-base font-bold text-dark py-2 mx-8 flex group-hover:text-primary">Login</a>
                             </li>
                         </ul>
                     </nav>
@@ -62,7 +62,7 @@
                     <!-- <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Desainer & <span class="text-dark"> Content Creator</span></h2> -->
                     <p class="font-medium text-secondary mb-10 leading-relaxed">Chat bidan, kunjungi polindes, beli obat, cek lab dan update informasi seputar kesehatan ibu dan anak, semua bisa di <span class="text-dark font-bold">halobid!</span></p>
                     <a href="https://api.whatsapp.com/send?phone=6287886952551" target="_blank" class="text-basse font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Chat dengan Bidan</a>
-                </div> 
+                </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
                         <img src="dist/image/bidan.png" alt="Bidan" class="max-w-full mx-auto">
@@ -114,7 +114,7 @@
                         </a> --}}
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </section>
     <!-- Layanan Section End -->
@@ -142,7 +142,7 @@
                     </a>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <!-- Mitra Section End -->
@@ -221,11 +221,11 @@
                     <div class="w-full px-4 mb-8">
                         <label for="no_telepon" class="text-base font-bold">No. Telepon</label>
                         <input type="number" id="no_telepon" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:outline-primary focus:ring-1 focus:border-primary">
-                    </div> 
+                    </div>
                     <div class="w-full px-4 mb-8">
                         <label for="email" class="text-base font-bold">Email</label>
                         <input type="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:outline-primary focus:ring-1 focus:border-primary">
-                    </div> 
+                    </div>
                     <div class="w-full px-4 mb-8">
                         <label for="message" class="text-base font-bold">Pesan</label>
                         <textarea type="message" id="message" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:outline-primary focus:ring-1 focus:border-primary h-32"></textarea>
@@ -237,7 +237,7 @@
                  </div>
             </form>
         </div>
-    </section>  
+    </section>
     <!-- Konsultasi Section End -->
 
     <!-- Footer Start -->

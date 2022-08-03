@@ -67,6 +67,7 @@
                             <label for="suami">Nama Suami</label>
                             <input type="text" name="suami" class="form-control" id="suami" placeholder="Nama Suami" required>
                           </div>
+                            <input name="posyandu_id" value="{{auth()->user()->posyandu->id}}" hidden>
                           <div class="form-group">
                             <label for="anak_ke">Mengandung Anak Ke-</label>
                             <input type="number" name="anak_ke" class="form-control" id="anak_ke" placeholder="Mengandung Anak Ke" required>

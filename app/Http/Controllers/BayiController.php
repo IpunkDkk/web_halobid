@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bayi;
 use App\Models\Pantaubayi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BayiController extends Controller
 {
@@ -15,7 +16,11 @@ class BayiController extends Controller
      */
     public function index()
     {
-        $data = Bayi::all();
+        if (Auth::user()->role->role == 'admin'){
+            $data = Bayi::all();
+        }else{
+            $data = Bayi::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
+        }
         return view('bayi.index', compact(['data']));
     }
 

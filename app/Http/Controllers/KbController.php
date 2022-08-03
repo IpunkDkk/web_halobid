@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kb;
 use App\Models\Pantaukb;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KbController extends Controller
 {
@@ -19,7 +20,11 @@ class KbController extends Controller
      */
     public function index()
     {
-        $data = Kb::all();
+        if (Auth::user()->role->role == 'admin'){
+            $data = Kb::all();
+        }else{
+            $data = Kb::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
+        }
         return view('kb.index', compact(['data']));
     }
 

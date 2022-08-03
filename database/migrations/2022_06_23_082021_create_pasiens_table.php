@@ -21,6 +21,8 @@ return new class extends Migration
             $table->enum('jenis_kelamin', ['L', 'P'])->default('P');
             $table->string('usia');
             $table->string('no_hp');
+            $table->unsignedBigInteger('posyandu_id');
+            $table->foreign('posyandu_id')->references('id')->on('posyandus')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
