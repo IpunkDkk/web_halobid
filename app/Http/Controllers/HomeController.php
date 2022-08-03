@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Antrian;
+use App\Models\Bayi;
+use App\Models\Bidan;
+use App\Models\Bumil;
+use App\Models\Kb;
+use App\Models\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -14,20 +21,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $antrian = DB::table('antrians')->count();
-        $posyandu = DB::table('posyandus')->count();
-        $bidan = DB::table('bidans')->count();
-        $bayi = DB::table('bayis')->count();
-        $bumil = DB::table('bumils')->count();
-        $kb = DB::table('kbs')->count();
-        // dd($bidan);
+        $posyandu = 0;
+        $antrian = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+        if (Auth::user()->role->role == 'superadmin'){
+            $posyandu = Posyandu::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+        }
+        $bidan = Bidan::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+        $bayi = Bayi::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+        $bumil = Bumil::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+        $kb = Kb::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+
         return view('home', compact([
             'antrian',
-            'posyandu', 
-            'bidan', 
-            'bayi', 
+            'posyandu',
+            'bidan',
+            'bayi',
             'bumil',
-            'kb',  
+            'kb',
         ]));
     }
 

@@ -48,7 +48,7 @@
                             <input type="password" name="password" class="form-control" id="password" placeholder="***">
                         </div>
                         </div>
-                        </div>
+{{--                        </div>--}}
                         <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>

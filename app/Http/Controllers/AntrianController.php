@@ -17,7 +17,7 @@ class AntrianController extends Controller
      */
     public function index(Request $request)
     {
-        if (Auth::user()->role->role == 'admin'){
+        if (Auth::user()->role->role == 'superadmin'){
             $data = Antrian::all();
         }else{
             $data = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id);

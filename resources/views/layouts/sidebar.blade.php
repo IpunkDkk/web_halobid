@@ -243,7 +243,7 @@
                 </li>
               @endif
 
-              @if (auth()->user()->role->role == 'user')
+              @if (auth()->user()->role->role == 'User')
               <li class="nav-header">Data Master</li>
                 <li class="nav-item">
                       <a href="#" class="nav-link">

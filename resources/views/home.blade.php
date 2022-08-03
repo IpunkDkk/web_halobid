@@ -26,7 +26,8 @@
             <a href="{{ route('antrian.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-3 col-6">
+          @if (auth()->user()->role->role == 'superadmin')
+          <div class="col-lg-3 col-6">
           <div class="small-box bg-primary">
             <div class="inner">
               <h3>{{ $posyandu }}</h3>
@@ -38,6 +39,7 @@
             <a href="{{ route('posyandu.index') }}" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
+          @endif
         <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
             <div class="inner">
@@ -75,7 +77,7 @@
           </div>
         </div>
 
-        
+
         <div class="col-lg-3 col-6">
           <div class="small-box bg-danger">
             <div class="inner">

@@ -25,13 +25,13 @@ class BidanSeeder extends Seeder
            'posyandu_id' => 1
        ]) ;
         Bidan::create( [
-            'nama_bidan' => 'Nasidatul Qamariyah, Amd.Keb',
+            'nama_bidan' => 'Qamariyah, Amd.Keb',
             'alamat' => 'Sana tengah',
             'no_str' => '01234',
             'no_hp' => '081703991999',
             'pendidikan' => 'S1 - Kebidanan',
             'foto' => '1.jpg',
-            'posyandu_id' => 1
+            'posyandu_id' => 2
         ]) ;
     }
 }

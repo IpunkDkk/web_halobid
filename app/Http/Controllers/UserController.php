@@ -42,15 +42,10 @@ class UserController extends Controller
                         $request->session()->regenerate();
                         return redirect()->route('admin');
                     }
-                    // dd("login sukses");
-                    // retirn
-                }else{
-                    return redirect()->route('login');
                 }
-            }else{
-                return redirect()->route('login');
             }
         }
+        return redirect()->route('login');
     }
 
     public function logout(Request $request)

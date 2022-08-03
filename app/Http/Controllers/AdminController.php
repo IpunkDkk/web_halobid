@@ -19,11 +19,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = DB::table('users')->join('roles', 'roles.user_id','=', 'users.id')
-        ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);
-//        $data = User::where('posyandu_id', '==', Auth::user()->posyandu->id)->join('roles', 'roles.user_id','=', 'users.id')
-//        ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);;
-//        dd($data);
+        $data = User::all()->where('posyandu_id', '==', Auth::user()->posyandu->id);
         return view('user.index', compact(['data']));
     }
 

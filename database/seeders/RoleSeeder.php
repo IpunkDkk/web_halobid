@@ -20,15 +20,15 @@ class RoleSeeder extends Seeder
             'user_id' => 1
         ]);
         Role::create([
-            'role' => 'bidan',
-            'user_id' => 2
-        ]);
-        Role::create([
-            'role' => 'kader',
+            'role' => 'superadmin',
             'user_id' => 3
         ]);
         Role::create([
-            'role' => 'user',
+            'role' => 'admin',
+            'user_id' => 2
+        ]);
+        Role::create([
+            'role' => 'admin',
             'user_id' => 4
         ]);
     }
