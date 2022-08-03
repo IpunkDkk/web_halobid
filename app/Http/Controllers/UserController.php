@@ -43,6 +43,13 @@ class UserController extends Controller
                         return redirect()->route('admin');
                     }
                 }
+            }else if($email->role->role == 'superadmin'){
+                if (Hash::check($request->password, $email->password)){
+                    if(Auth::attempt(['email' => $request->email, 'password' => $request->password], remember:1)){
+                        $request->session()->regenerate();
+                        return redirect()->route('admin');
+                    }
+                }
             }
         }
         return redirect()->route('login');

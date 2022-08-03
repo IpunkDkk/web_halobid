@@ -32,6 +32,7 @@
             </div>
           </div>
         </div>
+          <input value="{{app('request')->input('pralogin')}}" name="pralogin" hidden>
         <div class="input-group mb-3">
           <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
           <div class="input-group-append">
