@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Posyandu;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Unique;
@@ -31,7 +32,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //      
+        //
     }
 
     /**
@@ -54,12 +55,15 @@ class RegisterController extends Controller
 
 
         // $validateData['password'] = Hash::make($validateData['password']);
+        $posyandu = Posyandu::all()->where('nama','==', $request->pralogin)->first();
+//        dd();
         $password = Hash::make($request->password);
         $user = User::create([
             'name' => $request->nama,
             'username' => $request->username,
             'email' => $request->email,
-            'password' => $password
+            'password' => $password,
+            'posyandu_id' => $posyandu->id
         ]);
 
         // dd('Berhasil');
@@ -67,7 +71,7 @@ class RegisterController extends Controller
             $id = $user->id;
             $role = Role::create([
                 'user_id' => $id,
-                'role' => 'user'
+                'role' => 'User'
             ]);
             // $data = DB::table('users')->join('roles', 'roles.user_id', '=', 'users.id')
             //     ->get(['users.name', 'users.email', 'roles.role', 'roles.id']);

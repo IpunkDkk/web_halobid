@@ -7,7 +7,7 @@
         <form action="/login" method="post">
           @csrf
           <div class="input-group mb-4">
-            <input type="email" name="email" value="{{ old('email') }}" class="form-control" @error('email') is-invalid @enderror placeholder="Email" required>
+            <input type="email" name="email"  class="form-control" @error('email') is-invalid @enderror placeholder="Email" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="input-group mb-4">
-            <input type="password" name="password" value="{{ old('password') }}" class="form-control" @error('password') is-invalid @enderror placeholder="Password" required>
+            <input type="password" name="password" class="form-control" @error('password') is-invalid @enderror placeholder="Password" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -29,7 +29,7 @@
               <button  type="submit" class=" w-100 btn btn-primary btn-block">Login</button>
             </div>
         </form>
-          <small class="d-block text-center mt-3">Belum punya akun? <a href="/register">Daftar sekarang!</a></small>
+          <small class="d-block text-center mt-3">Belum punya akun? <a href="{{'register/?pralogin='.app('request')->input('pralogin')}}">Daftar sekarang!</a></small>
       </div>
   </div>
 @endsection
