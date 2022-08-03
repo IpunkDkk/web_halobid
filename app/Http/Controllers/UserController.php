@@ -36,15 +36,20 @@ class UserController extends Controller
         $email = User::where('email', $request->email)->first();
         // dd($email);
         if ($email){
-            if (Hash::check($request->password, $email->password)){
-                if(Auth::attempt(['email' => $request->email, 'password' => $request->password], remember:1)){
-                    $request->session()->regenerate();
-                    return redirect()->route('admin');
+            if ($request->pralogin == $email->posyandu->nama){
+                if (Hash::check($request->password, $email->password)){
+                    if(Auth::attempt(['email' => $request->email, 'password' => $request->password], remember:1)){
+                        $request->session()->regenerate();
+                        return redirect()->route('admin');
+                    }
+                    // dd("login sukses");
+                    // retirn
+                }else{
+                    return redirect()->route('login');
                 }
-                // dd("login sukses");
-                // retirn
+            }else{
+                return redirect()->route('login');
             }
-            return redirect()->route('login');
         }
     }
 
