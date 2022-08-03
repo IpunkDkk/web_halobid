@@ -45,26 +45,5 @@ class UserSeeder extends Seeder
             'posyandu_id' => 3,
             'password' => Hash::make('admin')
         ]);
-        User::create([
-            'name' => 'Nasidatul Q',
-            'username' => 'bidan',
-            'email' => 'bidan@halobid.com',
-            'posyandu_id' => 2,
-            'password' => Hash::make('bidan')
-        ]);
-        User::create([
-            'name' => 'Titin',
-            'username' => 'kader',
-            'email' => 'kader@halobid.com',
-            'posyandu_id' => 2,
-            'password' => Hash::make('kader')
-        ]);
-        User::create([
-            'name' => 'Ani',
-            'username' => 'user',
-            'email' => 'user@halobid.com',
-            'posyandu_id' => 1,
-            'password' => Hash::make('user')
-        ]);
     }
 }

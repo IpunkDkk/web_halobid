@@ -21,15 +21,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posyandu = 0;
-        $antrian = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
         if (Auth::user()->role->role == 'superadmin'){
             $posyandu = Posyandu::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $antrian = Antrian::all()->count();
+            $bumil = Bumil::all()->count();
+            $bayi = Bayi::all()->count();
+            $kb = Kb::all()->count();
+            $bidan = Bidan::all()->count();
+        }else{
+            $posyandu = 0;
+            $antrian = Antrian::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $bidan = Bidan::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $bayi = Bayi::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $bumil = Bumil::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $kb = Kb::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
         }
-        $bidan = Bidan::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
-        $bayi = Bayi::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
-        $bumil = Bumil::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
-        $kb = Kb::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
 
         return view('home', compact([
             'antrian',
