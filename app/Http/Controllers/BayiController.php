@@ -18,6 +18,7 @@ class BayiController extends Controller
     {
         if (Auth::user()->role->role == 'superadmin'){
             $data = Bayi::all();
+//            dd
         }else{
             $data = Bayi::all()->where('posyandu_id','==', Auth::user()->posyandu->id);
         }
