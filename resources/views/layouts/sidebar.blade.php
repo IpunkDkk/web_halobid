@@ -26,6 +26,103 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+               @if (auth()->user()->role->role == 'superadmin')
+               <li class="nav-item {{ 'admin' == request()->path() ? 'menu-open' : '' }}">
+                 <a href="/admin" class="nav-link {{ 'admin' == request()->path() ? 'active' : '' }}">
+                   <i class="nav-icon fas fa-tachometer-alt"></i>
+                   <p>Dashboard</p>
+                 </a>
+               </li>
+           
+                 <li class="nav-header">Data Master</li>
+                   <li class="nav-item">
+                         <a href="#" class="nav-link">
+                           <i class="nav-icon fas fa-wallet"></i>
+                           <p>
+                             Kelola
+                             <i class="fas fa-angle-left right"></i>
+                           </p>
+                         </a>
+                       <ul class="nav nav-treeview">
+                           <li class="nav-item {{ 'antrian' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('antrian.index') }}" class="nav-link {{ 'admin/antrian' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-spinner"></i>
+                               <p>Antrian</p>
+                             </a>
+                           </li>
+                           <li class="nav-item {{ 'posyandu' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('posyandu.index') }}" class="nav-link {{ 'admin/posyandu' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-solid fa-hospital"></i>
+                               <p>Posyandu</p>
+                             </a>
+                           </li>
+                           <li class="nav-item {{ 'admin/bidan' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('bidan.index') }}" class="nav-link {{ 'admin/bidan' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-user-nurse"></i>
+                               <p>Data Bidan</p>
+                             </a>
+                           </li>
+           
+                           <li class="nav-item {{ 'bayi' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('bumil.index') }}" class="nav-link {{ 'admin/bumil' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-regular fa-wheelchair"></i>
+                               <p>Data Ibu Hamil</p>
+                             </a>
+                           </li>
+                           <li class="nav-item {{ 'bayi' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('bayi.index') }}" class="nav-link {{ 'admin/bayi' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-solid fa-baby"></i>
+                               <p>Data Bayi</p>
+                             </a>
+                           </li>
+                           <li class="nav-item {{ 'kb' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('kb.index') }}" class="nav-link {{ 'admin/kb' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-solid fa-syringe"></i>
+                               <p>Data KB</p>
+                             </a>
+                           </li>
+                           <li class="nav-item {{ 'user' == request()->path() ? 'menu-open' : '' }}">
+                             <a href="{{ route('user.index') }}" class="nav-link {{ 'admin/user' == request()->path() ? 'active' : '' }}">
+                               <i class="nav-icon fas fa-user"></i>
+                               <p>Data User</p>
+                             </a>
+                           </li>
+                       </ul>
+                   </li>
+                 <li class="nav-header">Data Laporan</li>
+                   <li class="nav-item">
+                     <a href="#" class="nav-link">
+                       <i class="nav-icon fas fa-solid fa-book"></i>
+                       <p>
+                         Laporan
+                         <i class="fas fa-angle-left right"></i>
+                       </p>
+                     </a>
+                     <ul class="nav nav-treeview">
+                       <li class="nav-item {{ 'laporanbayi' == request()->path() ? 'menu-open' : '' }}">
+                         <a href="{{ route('laporanbayi.index') }}" class="nav-link {{ 'admin/laporan' == request()->path() ? 'active' : '' }}">
+                           <i class="nav-icon fas fa-baby"></i>
+                           <p>Bayi</p>
+                         </a>
+                       </li>
+                     </ul>
+                   </li>
+           
+                     {{-- <li class="nav-header">Data Layanan</li> --}}
+                     {{-- <li class="nav-item {{ 'konsultasi' == request()->path() ? 'menu-open' : '' }}">
+                       <a href="{{ route('konsultasi.index') }}" class="nav-link {{ 'admin/konsultasi' == request()->path() ? 'active' : '' }}">
+                         <i class="nav-icon fas fa-solid fa-comment-dots"></i>
+                         <p>Konsultasi</p>
+                       </a>
+                     </li> --}}
+                     <li class="nav-item {{ 'logout' == request()->path() ? 'menu-open' : '' }}">
+                     <a href="/logout" class="nav-link {{ 'logout' == request()->path() ? 'active' : '' }}">
+                         <i class="nav-icon fas fa-power-off"></i>
+                         <p>Logout</p>
+                       </a>
+                     </li>
+                   @endif
+
     @if (auth()->user()->role->role == 'admin')
     <li class="nav-item {{ 'admin' == request()->path() ? 'menu-open' : '' }}">
       <a href="/admin" class="nav-link {{ 'admin' == request()->path() ? 'active' : '' }}">

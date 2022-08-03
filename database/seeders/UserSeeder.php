@@ -17,54 +17,32 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Taufiqur RM',
-            'username' => 'admin',
-            'email' => 'tareta@halobid.com',
-            'posyandu_id' => 1,
-            'password' => Hash::make('admin')
-        ]);
-        User::create([
-            'name' => 'Taufiqur RM',
-            'username' => 'admin',
-            'email' => 'bungguplong@halobid.com',
-            'posyandu_id' => 2,
-            'password' => Hash::make('admin')
-        ]);
-
-        User::create([
-            'name' => 'Taufiqur RM',
+            'name' => 'Admin',
             'username' => 'superadmin',
             'email' => 'admin@halobid.com',
             'posyandu_id' => 2,
             'password' => Hash::make('admin')
         ]);
         User::create([
-            'name' => 'Taufiqur RM',
+            'name' => 'Hariyanto',
+            'username' => 'admin',
+            'email' => 'tareta@halobid.com',
+            'posyandu_id' => 1,
+            'password' => Hash::make('admin')
+        ]);
+        User::create([
+            'name' => 'Zuhri',
+            'username' => 'admin',
+            'email' => 'bungguplong@halobid.com',
+            'posyandu_id' => 2,
+            'password' => Hash::make('admin')
+        ]);
+        User::create([
+            'name' => 'Fajar',
             'username' => 'admin',
             'email' => 'sumberpinang@halobid.com',
             'posyandu_id' => 3,
             'password' => Hash::make('admin')
-        ]);
-        User::create([
-            'name' => 'Nasidatul Q',
-            'username' => 'bidan',
-            'email' => 'bidan@halobid.com',
-            'posyandu_id' => 2,
-            'password' => Hash::make('bidan')
-        ]);
-        User::create([
-            'name' => 'Titin',
-            'username' => 'kader',
-            'email' => 'kader@halobid.com',
-            'posyandu_id' => 2,
-            'password' => Hash::make('kader')
-        ]);
-        User::create([
-            'name' => 'Ani',
-            'username' => 'user',
-            'email' => 'user@halobid.com',
-            'posyandu_id' => 1,
-            'password' => Hash::make('user')
         ]);
     }
 }
