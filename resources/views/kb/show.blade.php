@@ -6,7 +6,7 @@
               <div class="card-header">
                   <h2 class="card-title mt-2"><strong>Detail Ibu KB</strong></h2>
                     <div class="card-tools">
-                        @if (auth()->user()->role->role != 'User')
+                      @if (auth()->user()->role->role != 'User')
                         <a href="{{route('pantaukb.show', $data->id)}}">
                             <button type="button" class="btn btn-success" title="Tambah">
                                 <i class="fas solid fa-plus mr-2" ></i>Pemeriksaan
@@ -97,8 +97,8 @@
                                       </button>
                                   </form>
                               </div>
-                          </td>
-                        </tr>
+                          </td> 
+                        </tr>   
                         @endforeach
                       </tr>
                     </tbody>
