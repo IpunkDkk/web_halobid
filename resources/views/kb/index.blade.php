@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-    
+
         <!-- Content Header (Page header) -->
         <section class="content-header">
         {{-- <div class="container-fluid">
@@ -69,8 +69,8 @@
                                         </form>
                                         @endif
                                     </div>
-                                </td> 
-                            </tr>                            
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                     </table>
@@ -88,4 +88,3 @@
             </div>
     </section>
 @endsection
-                                
