@@ -40,7 +40,7 @@
                                 <th>ALAMAT</th>
                                 <th>USIA KEHAMILAN</th>
                                 <th>PEKERJAAN</th>
-                                <th style="width: 12%">Aksi</th>
+                                <th style="width: 12%">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,6 +54,7 @@
                                     <td>{{ $item->pekerjaan }}</td>
                                     <td class="project-actions text-center">
                                         <div class="row justify-content-center align-item-center">
+                                            @if (auth()->user()->role->role != 'user')
                                             <a class="btn btn-primary btn-sm m-1" href="{{ route('bumil.show', $item->id) }}">
                                                 <i class="fas fa-eye"></i>
                                             </a>
@@ -67,6 +68,7 @@
                                                     <i class="fas fa-trash"></i>
                                                 </button>
                                             </form>
+                                            @endif
                                         </div>
                                     </td> 
                                 </tr>                            
