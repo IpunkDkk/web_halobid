@@ -54,7 +54,7 @@
                                     <td>{{ $item->pekerjaan }}</td>
                                     <td class="project-actions text-center">
                                         <div class="row justify-content-center align-item-center">
-                                            @if (auth()->user()->role->role != 'user')
+                                            
                                             <a class="btn btn-primary btn-sm m-1" href="{{ route('bumil.show', $item->id) }}">
                                                 <i class="fas fa-eye"></i>
                                             </a>
