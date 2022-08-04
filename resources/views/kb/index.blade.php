@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-    
+
         <!-- Content Header (Page header) -->
         <section class="content-header">
         {{-- <div class="container-fluid">
@@ -56,6 +56,7 @@
                                         <a class="btn btn-primary btn-sm m-1" href="{{ route('kb.show', $item->id) }}">
                                             <i class="fas fa-eye"></i>
                                         </a>
+                                        @if (auth()->user()->role->role != 'User')
                                         <a class="btn btn-warning btn-sm m-1" href="{{ route('kb.edit', $item->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
                                         </a>
@@ -66,9 +67,10 @@
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
+                                        @endif
                                     </div>
-                                </td> 
-                            </tr>                            
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                     </table>
@@ -86,4 +88,3 @@
             </div>
     </section>
 @endsection
-                                
