@@ -34,9 +34,9 @@
                     <thead>
                         <tr class="text-center">
                             <th style="width: 1%">#</th>
-                            <th>NO. ANTRIAN</th>                          
-                            <th>KETERANGAN</th>                          
-                            <th>STATUS</th>                          
+                            <th>NO. ANTRIAN</th>
+                            <th>KETERANGAN</th>
+                            <th>STATUS</th>
                             <th style="width: 12%">AKSI</th>
                         </tr>
                     </thead>
@@ -52,16 +52,16 @@
                                     @else
                                         <span class="right badge badge-danger">{{ $item->status }}</span>
                                     @endif
-                                    
+
                                 </td>
-                                
+
 
                                 <td class="project-actions text-center">
                                     <div class="row justify-content-center align-item-center">
                                         <a class="btn btn-primary btn-sm m-1" href="{{ route('antrian.show', $item->id) }}">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        @if (auth()->user()->role->role != 'user')
+                                        @if (auth()->user()->role->role != 'User')
                                         <a class="btn btn-warning btn-sm m-1" href="{{ route('antrian.edit', $item->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
                                         </a>
@@ -74,8 +74,8 @@
                                         </form>
                                         @endif
                                     </div>
-                                </td> 
-                            </tr>                            
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                     </table>

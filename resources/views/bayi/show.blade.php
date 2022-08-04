@@ -1,7 +1,7 @@
 {{-- @extends('layouts.index')
   @section('content')
         <section class="content-header">
-          </section>     
+          </section>
           <section class="content">
             <div class="container-fluid">
               <div class="row">
@@ -39,7 +39,7 @@
                             <label for="nama_ibu">Nam Ibu</label>
                             <input type="text" name="nama_ibu" class="form-control" id="nama_ibu" placeholder="Ibu" value="{{ $data->nama_ibu }}" disabled>
                           </div>
-                          
+
                           <div class="form-group">
                             <label for="nama_ayah">Nama Ayah</label>
                             <input type="text" name="nama_ayah" class="form-control" id="nama_ayah" placeholder="Ayah" value="{{ $data->nama_ayah }}" disabled>
@@ -65,7 +65,7 @@
                             <div class="form-group">
                               <label for="pjg_sekarang">Panjang Sekarang</label>
                               <input type="number" name="pjg_sekarang" class="form-control" id="pjg_sekarang" placeholder=".. cm" value="{{ $data->pjg_sekarang }}" disabled>
-                            </div>                                   
+                            </div>
                           <div class="form-group">
                             <label>Catatan Pemeriksaan</label>
                             <textarea class="form-control" rows="3" placeholder="" disabled>{{ $data->ket_pemeriksaan }}</textarea>
@@ -90,11 +90,13 @@
               <div class="card-header">
                   <h2 class="card-title mt-2"><strong>Detail Bayi</strong></h2>
                     <div class="card-tools">
+                        @if (auth()->user()->role->role != 'User')
                         <a href="{{route('pantaubayi.show', $data->id)}}">
                             <button type="button" class="btn btn-success" title="Tambah">
                                 <i class="fas solid fa-plus mr-2" ></i>Pemeriksaan
                             </button>
                         </a>
+                        @endif
                           <button type="button" onclick="window.history.back()" class="btn btn-warning" title="Batal">
                               <i class="fas solid fa-arrow-left mr-2"></i>Batal
                           </button>
@@ -178,8 +180,8 @@
                                       </button>
                                   </form>
                               </div>
-                          </td> 
-                        </tr>   
+                          </td>
+                        </tr>
                         @endforeach
                       </tr>
                     </tbody>

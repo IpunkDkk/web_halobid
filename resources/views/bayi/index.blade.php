@@ -34,7 +34,7 @@
                     <thead>
                         <tr class="text-center">
                             <th style="width: 1%">#</th>
-                            <th>NAMA LENGKAP</th>                          
+                            <th>NAMA LENGKAP</th>
                             <th>TEMPAT LAHIR</th>
                             <th>TANGGAL LAHIR</th>
                             <th>L/P</th>
@@ -58,6 +58,7 @@
                                         <a class="btn btn-primary btn-sm m-1" href="{{ route('bayi.show', $item->id) }}">
                                             <i class="fas fa-eye"></i>
                                         </a>
+                                        @if (auth()->user()->role->role != 'User')
                                         <a class="btn btn-warning btn-sm m-1" href="{{ route('bayi.edit', $item->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
                                         </a>
@@ -68,9 +69,10 @@
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
+                                        @endif
                                     </div>
-                                </td> 
-                            </tr>                            
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                     </table>

@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function login(Request $request){
         $email = User::where('email', $request->email)->first();
-        // dd($email);
+//         dd($email->em);
         if ($email){
             if ($request->pralogin == $email->posyandu->nama){
                 if (Hash::check($request->password, $email->password)){

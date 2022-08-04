@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->role->role == 'superadmin'){
-            $posyandu = Posyandu::all()->where('posyandu_id','==', Auth::user()->posyandu->id)->count();
+            $posyandu = Posyandu::all()->count();
             $antrian = Antrian::all()->count();
             $bumil = Bumil::all()->count();
             $bayi = Bayi::all()->count();
