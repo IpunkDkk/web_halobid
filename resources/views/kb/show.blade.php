@@ -85,6 +85,7 @@
                           <td>{{ $item->akseptor_kb }}</td>
                           <td>{{ $item->ket_tambahan }}</td>
                           <td class="project-actions text-center">
+                            @if (auth()->user()->role->role != 'User')
                               <div class="row justify-content-center align-item-center">
                                   {{-- <a class="btn btn-warning btn-sm m-1" href="{{ route('pantaukb.edit', $item->id) }}">
                                       <i class="fas fa-pencil-alt"></i>
@@ -97,6 +98,7 @@
                                       </button>
                                   </form>
                               </div>
+                            @endif
                           </td> 
                         </tr>   
                         @endforeach

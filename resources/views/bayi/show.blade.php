@@ -171,6 +171,7 @@
                           <td>{{ $item->imunisasi }}</td>
                           <td>{{ $item->vitamin }}</td>
                           <td class="project-actions text-center">
+                            @if (auth()->user()->role->role != 'User')
                               <div class="row justify-content-center align-item-center">
                                   <form method="post" action="{{ route('pantaubayi.destroy', $item->id) }}">
                                       @csrf
@@ -180,6 +181,7 @@
                                       </button>
                                   </form>
                               </div>
+                              @endif
                           </td>
                         </tr>
                         @endforeach

@@ -178,7 +178,9 @@
                             <td>{{ $item->usia }}</td>
                             <td>{{ $item->ket_pemeriksaan }}</td>
                               <td class="project-actions text-center">
+                                @if (auth()->user()->role->role != 'User')
                                 <div class="row justify-content-center align-item-center">
+                                  
                                     <form method="post" action="{{ route('pantaubumil.destroy', $item->id) }}">
                                         @csrf
                                         @method('DELETE')
@@ -187,6 +189,7 @@
                                         </button>
                                     </form>
                                 </div>
+                                @endif
                               </td>
                           </tr>
                         @endforeach
